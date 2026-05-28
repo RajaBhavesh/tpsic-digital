@@ -36,7 +36,7 @@ export default function Navbar() {
 
           {/* Right: WhatsApp Button */}
           <a
-            href="https://wa.me/91XXXXXXXXXX"
+            href="https://wa.me/9935748696"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-green-500 hover:bg-green-600 text-white text-sm font-medium px-4 py-2 rounded-lg transition-colors"
