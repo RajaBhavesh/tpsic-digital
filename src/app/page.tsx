@@ -18,8 +18,8 @@ export default function Home() {
           </p>
 
           <p className="text-gray-500 text-base max-w-2xl mx-auto mb-10">
-            Located in Missa Baragaon, Ayodhya, we provide quality education 
-            to 300+ students. UP Board affiliated school with experienced 
+            Located in Missa Baragaon, Ayodhya, we provide quality education
+            to 300+ students. UP Board affiliated school with experienced
             teachers, dedicated to shaping a brighter future for every child.
           </p>
 
@@ -34,7 +34,7 @@ export default function Home() {
               href="/about"
               className="border-2 border-blue-900 text-blue-900 hover:bg-blue-900 hover:text-white font-medium px-8 py-3 rounded-lg transition-colors text-base"
             >
-              Hamare Baare Mein
+              About Us
             </a>
           </div>
 
@@ -58,6 +58,108 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Why Choose Us */}
+      <section className="py-16 px-6 bg-white">
+        <div className="max-w-5xl mx-auto">
+          <p className="text-orange-500 font-medium text-sm uppercase tracking-widest text-center mb-3">
+            Why Choose Us
+          </p>
+          <h2 className="text-3xl font-bold text-blue-900 text-center mb-12">
+            What Makes Us Different?
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+            <div className="text-center p-6 rounded-xl hover:bg-blue-50 transition-colors">
+              <div className="text-5xl mb-4">🎓</div>
+              <h3 className="text-lg font-bold text-blue-900 mb-3">
+                Experienced Teachers
+              </h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                Our dedicated faculty brings years of experience and passion 
+                for teaching. Every child gets personal attention.
+              </p>
+            </div>
+
+            <div className="text-center p-6 rounded-xl hover:bg-blue-50 transition-colors">
+              <div className="text-5xl mb-4">📚</div>
+              <h3 className="text-lg font-bold text-blue-900 mb-3">
+                Strong Academics
+              </h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                UP Board curriculum with focus on conceptual clarity. 
+                Regular tests, homework support, and exam preparation.
+              </p>
+            </div>
+
+            <div className="text-center p-6 rounded-xl hover:bg-blue-50 transition-colors">
+              <div className="text-5xl mb-4">🏆</div>
+              <h3 className="text-lg font-bold text-blue-900 mb-3">
+                Proven Results
+              </h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                Consistent results in UP Board exams. Our students go on 
+                to excel in higher education and careers.
+              </p>
+            </div>
+
+            <div className="text-center p-6 rounded-xl hover:bg-blue-50 transition-colors">
+              <div className="text-5xl mb-4">💰</div>
+              <h3 className="text-lg font-bold text-blue-900 mb-3">
+                Affordable Fees
+              </h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                Quality education should be accessible to all. We keep 
+                our fees affordable for every family in our community.
+              </p>
+            </div>
+
+            <div className="text-center p-6 rounded-xl hover:bg-blue-50 transition-colors">
+              <div className="text-5xl mb-4">🌱</div>
+              <h3 className="text-lg font-bold text-blue-900 mb-3">
+                Holistic Development
+              </h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                Beyond academics — we focus on character building, 
+                discipline, and overall personality development.
+              </p>
+            </div>
+
+            <div className="text-center p-6 rounded-xl hover:bg-blue-50 transition-colors">
+              <div className="text-5xl mb-4">📍</div>
+              <h3 className="text-lg font-bold text-blue-900 mb-3">
+                Local & Trusted
+              </h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                Serving Missa Baragaon and surrounding villages since 2011. 
+                A school your community trusts.
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Banner */}
+      <section className="bg-orange-500 py-12 px-6 text-center">
+        <div className="max-w-3xl mx-auto">
+          <h2 className="text-2xl font-bold text-white mb-4">
+            Apne Bachche Ka Bhavishya Surakshit Karein
+          </h2>
+          <p className="text-orange-100 mb-8">
+            Admissions open for 2026-27. Limited seats available.
+          </p>
+          <a
+            href="https://wa.me/91XXXXXXXXXX"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-white text-orange-500 hover:bg-orange-50 font-bold px-8 py-3 rounded-lg transition-colors"
+          >
+            WhatsApp Karein — Abhi Apply Karein
+          </a>
+        </div>
+      </section>
+
     </main>
   );
 }
