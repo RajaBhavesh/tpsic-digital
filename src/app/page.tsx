@@ -6,7 +6,7 @@ export default function Home() {
         <div className="max-w-4xl mx-auto">
 
           <p className="text-orange-500 font-medium text-sm uppercase tracking-widest mb-4">
-            UP Board Affiliated — Est. 2001
+            UP Board Affiliated — Est. 2011
           </p>
 
           <h1 className="text-4xl md:text-5xl font-bold text-blue-900 leading-tight mb-6">
@@ -53,7 +53,7 @@ export default function Home() {
             <p className="text-blue-200 text-sm mt-1">Affiliated</p>
           </div>
           <div>
-            <p className="text-3xl font-bold text-orange-400">Est. 2001</p>
+            <p className="text-3xl font-bold text-orange-400">Est. 2011</p>
             <p className="text-blue-200 text-sm mt-1">Established</p>
           </div>
         </div>
