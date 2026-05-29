@@ -150,7 +150,7 @@ export default function Home() {
             Admissions open for 2026-27. Limited seats available.
           </p>
           <a
-            href="https://wa.me/91XXXXXXXXXX"
+            href="https://wa.me/919935748696"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-white text-orange-500 hover:bg-orange-50 font-bold px-8 py-3 rounded-lg transition-colors"

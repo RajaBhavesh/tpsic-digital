@@ -37,10 +37,10 @@ export default function Contact() {
               8:00 AM — 4:00 PM
             </p>
             <a
-              href="tel:+91XXXXXXXXXX"
+              href="tel:+919935748696"
               className="text-orange-500 font-medium hover:text-orange-600"
             >
-              +91 XXXXX XXXXX
+              +91 99357 48696
             </a>
           </div>
           <div className="bg-white rounded-xl p-8 border border-gray-100 text-center">
@@ -51,7 +51,7 @@ export default function Contact() {
               We reply within a few hours.
             </p>
             <a
-              href="https://wa.me/91XXXXXXXXXX"
+              href="https://wa.me/919935748696"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-green-500 hover:bg-green-600 text-white text-sm font-medium px-6 py-2 rounded-lg transition-colors"
@@ -96,7 +96,7 @@ export default function Contact() {
             during office hours. Come meet our teachers and see our facilities.
           </p>
           <a
-            href="https://wa.me/91XXXXXXXXXX"
+            href="https://wa.me/919935748696"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-orange-500 hover:bg-orange-600 text-white font-medium px-8 py-3 rounded-lg transition-colors"

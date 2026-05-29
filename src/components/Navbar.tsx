@@ -63,7 +63,7 @@ export default function Navbar() {
           <div className="flex items-center gap-3">
             {/* WhatsApp Button - desktop only */}
             <a
-              href="https://wa.me/91XXXXXXXXXX"
+              href="https://wa.me/919935748696"
               target="_blank"
               rel="noopener noreferrer"
               className="hidden md:block bg-green-500 hover:bg-green-600 text-white text-sm font-medium px-4 py-2 rounded-lg transition-colors"
@@ -104,7 +104,7 @@ export default function Navbar() {
                 </Link>
               ))}
               <a
-                href="https://wa.me/91XXXXXXXXXX"
+                href="https://wa.me/919935748696"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-green-500 text-white text-sm font-medium px-4 py-2 rounded-lg text-center mt-2"

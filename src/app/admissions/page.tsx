@@ -94,7 +94,7 @@ export default function Admissions() {
             We typically reply within a few hours.
           </p>
           <a
-            href="https://wa.me/91XXXXXXXXXX"
+            href="https://wa.me/919935748696"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-green-500 hover:bg-green-600 text-white font-medium px-8 py-3 rounded-lg transition-colors"
