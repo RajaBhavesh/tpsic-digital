@@ -1,3 +1,4 @@
+import Link from "next/link";
 export default function Home() {
   return (
     <main>
@@ -24,18 +25,18 @@ export default function Home() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
+            <Link
               href="/admissions"
               className="bg-orange-500 hover:bg-orange-600 text-white font-medium px-8 py-3 rounded-lg transition-colors text-base"
             >
               Admission Inquiry
-            </a>
-            <a
+            </Link>
+            <Link
               href="/about"
               className="border-2 border-blue-900 text-blue-900 hover:bg-blue-900 hover:text-white font-medium px-8 py-3 rounded-lg transition-colors text-base"
             >
               About Us
-            </a>
+            </Link>
           </div>
 
         </div>

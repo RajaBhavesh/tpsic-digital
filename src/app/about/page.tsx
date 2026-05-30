@@ -1,3 +1,4 @@
+import Link from "next/link";
 export default function About() {
   return (
     <main>
@@ -74,12 +75,12 @@ export default function About() {
             Admissions are open for the 2026-27 academic year. 
             Contact us today to know more.
           </p>
-          <a
+          <Link
             href="/admissions"
             className="bg-orange-500 hover:bg-orange-600 text-white font-medium px-8 py-3 rounded-lg transition-colors"
           >
             Apply for Admission
-          </a>
+          </Link>
         </div>
       </section>
     </main>
