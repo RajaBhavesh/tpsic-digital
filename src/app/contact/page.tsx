@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Contact() {
   return (
     <main>
@@ -11,7 +13,7 @@ export default function Contact() {
             Contact Us
           </h1>
           <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-            Have questions? We are here to help. Reach out to us 
+            Have questions? We are here to help. Reach out to us
             via WhatsApp, phone, or visit us directly.
           </p>
         </div>
@@ -19,7 +21,7 @@ export default function Contact() {
 
       {/* Contact Cards */}
       <section className="py-16 px-6">
-        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-6">
           <div className="bg-white rounded-xl p-8 border border-gray-100 text-center">
             <div className="text-4xl mb-4">📍</div>
             <h3 className="font-bold text-blue-900 text-lg mb-3">Address</h3>
@@ -44,6 +46,20 @@ export default function Contact() {
             </a>
           </div>
           <div className="bg-white rounded-xl p-8 border border-gray-100 text-center">
+            <div className="text-4xl mb-4">✉️</div>
+            <h3 className="font-bold text-blue-900 text-lg mb-3">Email</h3>
+            <p className="text-gray-600 text-sm mb-4">
+              For official correspondence<br />
+              and inquiries
+            </p>
+            <a
+              href="mailto:tejpalsmarakintercollege2011@gmail.com"
+              className="text-orange-500 font-medium hover:text-orange-600 text-xs break-all"
+            >
+              tejpalsmarakintercollege2011@gmail.com
+            </a>
+          </div>
+          <div className="bg-white rounded-xl p-8 border border-gray-100 text-center">
             <div className="text-4xl mb-4">💬</div>
             <h3 className="font-bold text-blue-900 text-lg mb-3">WhatsApp</h3>
             <p className="text-gray-600 text-sm mb-4">
@@ -58,6 +74,26 @@ export default function Contact() {
             >
               WhatsApp Now
             </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Google Maps */}
+      <section className="py-16 px-6">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-2xl font-bold text-blue-900 text-center mb-10">
+            Find Us on Map
+          </h2>
+          <div className="rounded-xl overflow-hidden border border-gray-100">
+            <iframe
+              src="https://maps.google.com/maps?q=26.75828968491423,81.82408099081395&z=15&output=embed"
+              width="100%"
+              height="400"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
           </div>
         </div>
       </section>
@@ -85,6 +121,37 @@ export default function Contact() {
         </div>
       </section>
 
+      {/* School Details */}
+      <section className="py-16 px-6">
+        <div className="max-w-3xl mx-auto">
+          <h2 className="text-2xl font-bold text-blue-900 text-center mb-10">
+            School Details
+          </h2>
+          <div className="bg-white rounded-xl border border-gray-100 overflow-hidden">
+            <div className="grid grid-cols-2 border-b border-gray-100 p-4">
+              <p className="font-medium text-blue-900">School Code</p>
+              <p className="text-gray-600">621282</p>
+            </div>
+            <div className="grid grid-cols-2 border-b border-gray-100 p-4 bg-gray-50">
+              <p className="font-medium text-blue-900">U-DISE Code</p>
+              <p className="text-gray-600">09470911607</p>
+            </div>
+            <div className="grid grid-cols-2 border-b border-gray-100 p-4">
+              <p className="font-medium text-blue-900">Principal</p>
+              <p className="text-gray-600">Rajesh Kumar</p>
+            </div>
+            <div className="grid grid-cols-2 border-b border-gray-100 p-4 bg-gray-50">
+              <p className="font-medium text-blue-900">Affiliated</p>
+              <p className="text-gray-600">UP Board</p>
+            </div>
+            <div className="grid grid-cols-2 p-4">
+              <p className="font-medium text-blue-900">Recognition</p>
+              <p className="text-gray-600">High School: 2011, Intermediate: 2016</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="py-16 px-6 text-center">
         <div className="max-w-2xl mx-auto">
@@ -92,7 +159,7 @@ export default function Contact() {
             Want to Visit Us?
           </h2>
           <p className="text-gray-600 mb-8">
-            We welcome parents and students to visit our school anytime 
+            We welcome parents and students to visit our school anytime
             during office hours. Come meet our teachers and see our facilities.
           </p>
           <a

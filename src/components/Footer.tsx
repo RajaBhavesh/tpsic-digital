@@ -35,7 +35,7 @@ export default function Footer() {
             <div className="flex flex-col gap-2 text-blue-200 text-sm">
               <p>📍 Missa Baragaon, Ayodhya, UP</p>
               <p>📞 +91 9935748696</p>
-              <p>✉️ info@tsic.edu.in</p>
+              <p>✉️ tejpalsmarakintercollege2011@gmail.com</p>
               <a
                 href="https://wa.me/9935748696"
                 target="_blank"

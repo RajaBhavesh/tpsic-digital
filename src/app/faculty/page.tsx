@@ -2,40 +2,40 @@ import Link from "next/link";
 export default function Faculty() {
   const teachers = [
     {
-      name: "Mr. [Teacher Name]",
-      subject: "Mathematics",
-      qualification: "M.Sc., B.Ed.",
-      experience: "10+ years",
+      name: "Avneesh Kumar Tiwari",
+      subject: "Biology",
+      qualification: "Lecturer",
+      experience: "9 years",
     },
     {
-      name: "Mr. [Teacher Name]",
-      subject: "Science",
-      qualification: "M.Sc., B.Ed.",
-      experience: "8+ years",
+      name: "Ram Neval",
+      subject: "Physics",
+      qualification: "Lecturer",
+      experience: "8 years",
     },
     {
-      name: "Mrs. [Teacher Name]",
+      name: "Anshul Singh",
+      subject: "Physics",
+      qualification: "Lecturer",
+      experience: "4 years",
+    },
+    {
+      name: "Ganga Sagar Pandey",
       subject: "Hindi",
-      qualification: "M.A., B.Ed.",
-      experience: "12+ years",
+      qualification: "Lecturer",
+      experience: "11 years",
     },
     {
-      name: "Mr. [Teacher Name]",
-      subject: "English",
-      qualification: "M.A., B.Ed.",
-      experience: "6+ years",
+      name: "Rajesh Kumar",
+      subject: "Sociology",
+      qualification: "Lecturer",
+      experience: "7 years",
     },
     {
-      name: "Mr. [Teacher Name]",
-      subject: "Social Science",
-      qualification: "M.A., B.Ed.",
-      experience: "9+ years",
-    },
-    {
-      name: "Mrs. [Teacher Name]",
-      subject: "Sanskrit",
-      qualification: "M.A., B.Ed.",
-      experience: "7+ years",
+      name: "Kamini Singh",
+      subject: "Science",
+      qualification: "Assistant Teacher",
+      experience: "High School",
     },
   ];
 
@@ -87,7 +87,7 @@ export default function Faculty() {
             unlimited potential. Our teachers don't just teach — they inspire, 
             guide, and shape the future of our nation."
           </p>
-          <p className="text-blue-200 font-medium">— Principal, TSIC</p>
+          <p className="text-blue-200 font-medium">— Rajesh Kumar, Principal</p>
         </div>
       </section>
     </main>

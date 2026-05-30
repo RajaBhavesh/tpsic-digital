@@ -61,85 +61,67 @@ export default function Home() {
       </section>
 
       {/* Why Choose Us */}
-      <section className="py-16 px-6 bg-white">
-        <div className="max-w-5xl mx-auto">
-          <p className="text-orange-500 font-medium text-sm uppercase tracking-widest text-center mb-3">
-            Why Choose Us
-          </p>
-          <h2 className="text-3xl font-bold text-blue-900 text-center mb-12">
-            What Makes Us Different?
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+<section className="py-16 px-6 bg-white">
+  <div className="max-w-5xl mx-auto">
+    <p className="text-orange-500 font-medium text-sm uppercase tracking-widest text-center mb-3">
+      Why Choose Us
+    </p>
+    <h2 className="text-3xl font-bold text-blue-900 text-center mb-12">
+      What Makes Us Different
+    </h2>
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
 
-            <div className="text-center p-6 rounded-xl hover:bg-blue-50 transition-colors">
-              <div className="text-5xl mb-4">🎓</div>
-              <h3 className="text-lg font-bold text-blue-900 mb-3">
-                Experienced Teachers
-              </h3>
-              <p className="text-gray-600 text-sm leading-relaxed">
-                Our dedicated faculty brings years of experience and passion 
-                for teaching. Every child gets personal attention.
-              </p>
-            </div>
+      <div className="text-center p-6 rounded-xl hover:bg-blue-50 transition-colors">
+        <div className="text-5xl mb-4">🎓</div>
+        <h3 className="text-lg font-bold text-blue-900 mb-3">Experienced Teachers</h3>
+        <p className="text-gray-600 text-sm leading-relaxed">
+          7 dedicated faculty members with up to 11 years of teaching experience. Led by Principal Rajesh Kumar.
+        </p>
+      </div>
 
-            <div className="text-center p-6 rounded-xl hover:bg-blue-50 transition-colors">
-              <div className="text-5xl mb-4">📚</div>
-              <h3 className="text-lg font-bold text-blue-900 mb-3">
-                Strong Academics
-              </h3>
-              <p className="text-gray-600 text-sm leading-relaxed">
-                UP Board curriculum with focus on conceptual clarity. 
-                Regular tests, homework support, and exam preparation.
-              </p>
-            </div>
+      <div className="text-center p-6 rounded-xl hover:bg-blue-50 transition-colors">
+        <div className="text-5xl mb-4">📱</div>
+        <h3 className="text-lg font-bold text-blue-900 mb-3">5 Smart Classes</h3>
+        <p className="text-gray-600 text-sm leading-relaxed">
+          Modern smart classrooms with digital learning tools — bringing 21st century education to Ayodhya.
+        </p>
+      </div>
 
-            <div className="text-center p-6 rounded-xl hover:bg-blue-50 transition-colors">
-              <div className="text-5xl mb-4">🏆</div>
-              <h3 className="text-lg font-bold text-blue-900 mb-3">
-                Proven Results
-              </h3>
-              <p className="text-gray-600 text-sm leading-relaxed">
-                Consistent results in UP Board exams. Our students go on 
-                to excel in higher education and careers.
-              </p>
-            </div>
+      <div className="text-center p-6 rounded-xl hover:bg-blue-50 transition-colors">
+        <div className="text-5xl mb-4">🔬</div>
+        <h3 className="text-lg font-bold text-blue-900 mb-3">Science & Computer Lab</h3>
+        <p className="text-gray-600 text-sm leading-relaxed">
+          Fully equipped Science laboratory and Computer lab with internet/WiFi facility for students.
+        </p>
+      </div>
 
-            <div className="text-center p-6 rounded-xl hover:bg-blue-50 transition-colors">
-              <div className="text-5xl mb-4">💰</div>
-              <h3 className="text-lg font-bold text-blue-900 mb-3">
-                Affordable Fees
-              </h3>
-              <p className="text-gray-600 text-sm leading-relaxed">
-                Quality education should be accessible to all. We keep 
-                our fees affordable for every family in our community.
-              </p>
-            </div>
+      <div className="text-center p-6 rounded-xl hover:bg-blue-50 transition-colors">
+        <div className="text-5xl mb-4">📷</div>
+        <h3 className="text-lg font-bold text-blue-900 mb-3">9 CCTV Cameras</h3>
+        <p className="text-gray-600 text-sm leading-relaxed">
+          Complete campus surveillance with 9 CCTV cameras — ensuring safety and security of every student.
+        </p>
+      </div>
 
-            <div className="text-center p-6 rounded-xl hover:bg-blue-50 transition-colors">
-              <div className="text-5xl mb-4">🌱</div>
-              <h3 className="text-lg font-bold text-blue-900 mb-3">
-                Holistic Development
-              </h3>
-              <p className="text-gray-600 text-sm leading-relaxed">
-                Beyond academics — we focus on character building, 
-                discipline, and overall personality development.
-              </p>
-            </div>
+      <div className="text-center p-6 rounded-xl hover:bg-blue-50 transition-colors">
+        <div className="text-5xl mb-4">📚</div>
+        <h3 className="text-lg font-bold text-blue-900 mb-3">Library & Sports</h3>
+        <p className="text-gray-600 text-sm leading-relaxed">
+          Well-stocked library and sports ground — because education is not just academics, it's overall growth.
+        </p>
+      </div>
 
-            <div className="text-center p-6 rounded-xl hover:bg-blue-50 transition-colors">
-              <div className="text-5xl mb-4">📍</div>
-              <h3 className="text-lg font-bold text-blue-900 mb-3">
-                Local & Trusted
-              </h3>
-              <p className="text-gray-600 text-sm leading-relaxed">
-                Serving Missa Baragaon and surrounding villages since 2011. 
-                A school your community trusts.
-              </p>
-            </div>
+      <div className="text-center p-6 rounded-xl hover:bg-blue-50 transition-colors">
+        <div className="text-5xl mb-4">⚡</div>
+        <h3 className="text-lg font-bold text-blue-900 mb-3">Full Infrastructure</h3>
+        <p className="text-gray-600 text-sm leading-relaxed">
+          Generator backup, clean drinking water, separate toilets for boys & girls, boundary wall and iron gate.
+        </p>
+      </div>
 
-          </div>
-        </div>
-      </section>
+    </div>
+  </div>
+</section>
 
       {/* CTA Banner */}
       <section className="bg-orange-500 py-12 px-6 text-center">
