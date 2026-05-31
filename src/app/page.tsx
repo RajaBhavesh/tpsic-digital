@@ -173,6 +173,63 @@ export default function Home() {
         </div>
       </section>
       
+{/* Testimonials */}
+<section className="py-16 px-6 bg-blue-50">
+  <div className="max-w-5xl mx-auto">
+    <p className="text-orange-500 font-medium text-sm uppercase tracking-widest text-center mb-3">
+      Parents Speak
+    </p>
+    <h2 className="text-3xl font-bold text-blue-900 text-center mb-12">
+      What Our Parents Say
+    </h2>
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+      <div className="bg-white rounded-2xl p-6 shadow-sm border border-blue-100">
+        <div className="text-orange-400 text-3xl mb-4">"</div>
+        <p className="text-gray-600 text-sm leading-relaxed mb-6">
+          My son studied here from Class 6 to 12. The teachers are very dedicated and always available for doubt clearing. Best school in our area.
+        </p>
+        <div className="flex items-center gap-3">
+          <div className="w-10 h-10 rounded-full bg-blue-900 text-white flex items-center justify-center font-bold text-sm">RS</div>
+          <div>
+            <p className="font-medium text-blue-900 text-sm">Ramesh Singh</p>
+            <p className="text-gray-400 text-xs">Parent — Class 12</p>
+          </div>
+        </div>
+      </div>
+
+      <div className="bg-white rounded-2xl p-6 shadow-sm border border-blue-100">
+        <div className="text-orange-400 text-3xl mb-4">"</div>
+        <p className="text-gray-600 text-sm leading-relaxed mb-6">
+          Very affordable fees with excellent quality education. My daughter got District Rank in UP Board — all credit goes to TSIC teachers.
+        </p>
+        <div className="flex items-center gap-3">
+          <div className="w-10 h-10 rounded-full bg-blue-900 text-white flex items-center justify-center font-bold text-sm">SP</div>
+          <div>
+            <p className="font-medium text-blue-900 text-sm">Sunita Pandey</p>
+            <p className="text-gray-400 text-xs">Parent — Class 10</p>
+          </div>
+        </div>
+      </div>
+
+      <div className="bg-white rounded-2xl p-6 shadow-sm border border-blue-100">
+        <div className="text-orange-400 text-3xl mb-4">"</div>
+        <p className="text-gray-600 text-sm leading-relaxed mb-6">
+          Smart classes aur computer lab ki wajah se mere bache ko modern education mil rahi hai. School ki building aur cleanliness bhi bahut achhi hai.
+        </p>
+        <div className="flex items-center gap-3">
+          <div className="w-10 h-10 rounded-full bg-blue-900 text-white flex items-center justify-center font-bold text-sm">MV</div>
+          <div>
+            <p className="font-medium text-blue-900 text-sm">Mukesh Verma</p>
+            <p className="text-gray-400 text-xs">Parent — Class 8</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
       {/* Campus Gallery */}
 <section className="py-16 px-6 bg-white">
   <div className="max-w-5xl mx-auto">
