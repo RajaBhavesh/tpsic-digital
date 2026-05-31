@@ -13,6 +13,9 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   title: "Tejpal Smarak Inter College — Missa Baragaon, Ayodhya",
   description: "Tejpal Smarak Inter College, Missa Baragaon, Ayodhya, Uttar Pradesh. UP Board affiliated school.",
+  verification: {
+    google: "uFwfebRSMfMUJspJEAAIaDhQijUdYpXRhWO775XiuC8",
+  },
 };
 
 export default function RootLayout({
