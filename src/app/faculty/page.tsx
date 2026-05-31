@@ -1,4 +1,10 @@
 import Link from "next/link";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Our Faculty — Tejpal Smarak Inter College",
+  description: "Meet the dedicated teaching staff at Tejpal Smarak Inter College, Ayodhya. Experienced faculty teaching Biology, Physics, Hindi, Sociology and more.",
+};
 export default function Faculty() {
   const teachers = [
     {

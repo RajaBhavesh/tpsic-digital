@@ -1,3 +1,10 @@
+import Link from "next/link";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Admissions 2026-27 — Tejpal Smarak Inter College",
+  description: "Admissions open for 2026-27 at Tejpal Smarak Inter College, Missa Baragaon, Ayodhya. Nursery to Class 12. UP Board affiliated. Contact us on WhatsApp.",
+};
 export default function Admissions() {
   return (
     <main>

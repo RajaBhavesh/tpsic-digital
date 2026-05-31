@@ -1,5 +1,10 @@
 import Link from "next/link";
+import type { Metadata } from "next";
 
+export const metadata: Metadata = {
+  title: "Contact Us — Tejpal Smarak Inter College, Ayodhya",
+  description: "Contact Tejpal Smarak Inter College, Missa Baragaon, Ayodhya. Phone: +91 99357 48696. Email: tejpalsmarakintercollege2011@gmail.com. Find us on Google Maps.",
+};
 export default function Contact() {
   return (
     <main>

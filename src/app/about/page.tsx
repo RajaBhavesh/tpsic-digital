@@ -1,5 +1,10 @@
 import Link from "next/link";
+import type { Metadata } from "next";
 
+export const metadata: Metadata = {
+  title: "About Us — Tejpal Smarak Inter College, Ayodhya",
+  description: "Learn about Tejpal Smarak Inter College, Missa Baragaon, Ayodhya. UP Board affiliated school established in 2011. Meet our principal, faculty and explore our facilities.",
+};
 export default function About() {
   return (
     <main>
