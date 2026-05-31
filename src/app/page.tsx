@@ -83,61 +83,33 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Why Choose Us */}
-      <section className="py-16 px-6 bg-white">
-        <div className="max-w-5xl mx-auto">
-          <p className="text-orange-500 font-medium text-sm uppercase tracking-widest text-center mb-3">
-            Why Choose Us
-          </p>
-          <h2 className="text-3xl font-bold text-blue-900 text-center mb-12">
-            What Makes Us Different
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center p-6 rounded-xl hover:bg-blue-50 transition-colors">
-              <div className="text-5xl mb-4">🎓</div>
-              <h3 className="text-lg font-bold text-blue-900 mb-3">Experienced Teachers</h3>
-              <p className="text-gray-600 text-sm leading-relaxed">
-                7 dedicated faculty members with up to 11 years of teaching experience. Led by Principal Rajesh Kumar.
-              </p>
-            </div>
-            <div className="text-center p-6 rounded-xl hover:bg-blue-50 transition-colors">
-              <div className="text-5xl mb-4">📱</div>
-              <h3 className="text-lg font-bold text-blue-900 mb-3">5 Smart Classes</h3>
-              <p className="text-gray-600 text-sm leading-relaxed">
-                Modern smart classrooms with digital learning tools — bringing 21st century education to Ayodhya.
-              </p>
-            </div>
-            <div className="text-center p-6 rounded-xl hover:bg-blue-50 transition-colors">
-              <div className="text-5xl mb-4">🔬</div>
-              <h3 className="text-lg font-bold text-blue-900 mb-3">Science & Computer Lab</h3>
-              <p className="text-gray-600 text-sm leading-relaxed">
-                Fully equipped Science laboratory and Computer lab with internet/WiFi facility for students.
-              </p>
-            </div>
-            <div className="text-center p-6 rounded-xl hover:bg-blue-50 transition-colors">
-              <div className="text-5xl mb-4">📷</div>
-              <h3 className="text-lg font-bold text-blue-900 mb-3">9 CCTV Cameras</h3>
-              <p className="text-gray-600 text-sm leading-relaxed">
-                Complete campus surveillance with 9 CCTV cameras — ensuring safety and security of every student.
-              </p>
-            </div>
-            <div className="text-center p-6 rounded-xl hover:bg-blue-50 transition-colors">
-              <div className="text-5xl mb-4">📚</div>
-              <h3 className="text-lg font-bold text-blue-900 mb-3">Library & Sports</h3>
-              <p className="text-gray-600 text-sm leading-relaxed">
-                Well-stocked library and sports ground — because education is not just academics, it's overall growth.
-              </p>
-            </div>
-            <div className="text-center p-6 rounded-xl hover:bg-blue-50 transition-colors">
-              <div className="text-5xl mb-4">⚡</div>
-              <h3 className="text-lg font-bold text-blue-900 mb-3">Full Infrastructure</h3>
-              <p className="text-gray-600 text-sm leading-relaxed">
-                Generator backup, clean drinking water, separate toilets for boys & girls, boundary wall and iron gate.
-              </p>
-            </div>
-          </div>
+{/* Why Choose Us */}
+<section className="py-16 px-6 bg-white">
+  <div className="max-w-5xl mx-auto">
+    <p className="text-orange-500 font-medium text-sm uppercase tracking-widest text-center mb-3">
+      Why Choose Us
+    </p>
+    <h2 className="text-3xl font-bold text-blue-900 text-center mb-12">
+      What Makes Us Different
+    </h2>
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {[
+        { icon: "🎓", title: "Experienced Teachers", desc: "7 dedicated faculty members with up to 11 years of teaching experience. Led by Principal Rajesh Kumar." },
+        { icon: "📱", title: "5 Smart Classes", desc: "Modern smart classrooms with digital learning tools — bringing 21st century education to Ayodhya." },
+        { icon: "🔬", title: "Science & Computer Lab", desc: "Fully equipped Science laboratory and Computer lab with internet/WiFi facility for students." },
+        { icon: "📷", title: "9 CCTV Cameras", desc: "Complete campus surveillance with 9 CCTV cameras — ensuring safety and security of every student." },
+        { icon: "📚", title: "Library & Sports", desc: "Well-stocked library and sports ground — because education is not just academics, it's overall growth." },
+        { icon: "⚡", title: "Full Infrastructure", desc: "Generator backup, clean drinking water, separate toilets for boys & girls, boundary wall and iron gate." },
+      ].map((item, index) => (
+        <div key={index} className="group p-6 rounded-2xl border border-gray-100 hover:border-orange-200 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 bg-white">
+          <div className="text-4xl mb-4">{item.icon}</div>
+          <h3 className="text-lg font-bold text-blue-900 mb-3 group-hover:text-orange-500 transition-colors">{item.title}</h3>
+          <p className="text-gray-500 text-sm leading-relaxed">{item.desc}</p>
         </div>
-      </section>
+      ))}
+    </div>
+  </div>
+</section>
 
       {/* Notice Board */}
       <section className="bg-gray-50 py-16 px-6">
