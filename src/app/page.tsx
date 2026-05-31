@@ -39,8 +39,8 @@ export default function Home() {
     <h1 className="text-4xl md:text-5xl font-bold text-blue-900 leading-tight mb-6">
       Tejpal Smarak Inter College
     </h1>
-    <p className="text-xl text-gray-600 mb-4">
-      शिक्षा से सशक्तिकरण — गाँव से उज्ज्वल भविष्य तक
+    <p className="text-xl text-gray-600 mb-4 font-[var(--font-hind)]" lang="hi">
+     शिक्षा से सशक्तिकरण — गाँव से उज्ज्वल भविष्य तक
     </p>
     <p className="text-gray-500 text-base max-w-2xl mx-auto mb-10">
       Located in Missa Baragaon, Ayodhya, we provide quality education
