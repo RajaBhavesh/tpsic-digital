@@ -31,18 +31,19 @@ export default function Home() {
   return (
     <main>
       {/* Hero Section */}
-      <section className="bg-gradient-to-b from-blue-50 to-white py-20 px-6 text-center">
-  <div className="max-w-4xl mx-auto">
-    <p className="text-orange-500 font-medium text-sm uppercase tracking-widest mb-4">
+<section className="relative bg-gradient-to-br from-blue-900 via-blue-800 to-blue-900 py-24 px-6 text-center overflow-hidden">
+  <div className="absolute inset-0 opacity-10" style={{backgroundImage: "radial-gradient(circle at 20% 50%, #f97316 0%, transparent 50%), radial-gradient(circle at 80% 20%, #ffffff 0%, transparent 40%)"}}></div>
+  <div className="relative z-10 max-w-4xl mx-auto">
+    <p className="text-orange-400 font-medium text-sm uppercase tracking-widest mb-4">
       UP Board Affiliated — Est. 2011
     </p>
-    <h1 className="text-4xl md:text-5xl font-bold text-blue-900 leading-tight mb-6">
+    <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-6">
       Tejpal Smarak Inter College
     </h1>
-    <p className="text-xl text-gray-600 mb-4 font-[var(--font-hind)]" lang="hi">
-     शिक्षा से सशक्तिकरण — गाँव से उज्ज्वल भविष्य तक
+    <p className="text-xl text-orange-200 mb-4 font-[var(--font-hind)]" lang="hi">
+      शिक्षा से सशक्तिकरण — गाँव से उज्ज्वल भविष्य तक
     </p>
-    <p className="text-gray-500 text-base max-w-2xl mx-auto mb-10">
+    <p className="text-blue-200 text-base max-w-2xl mx-auto mb-10">
       Located in Missa Baragaon, Ayodhya, we provide quality education
       to 300+ students. UP Board affiliated school with experienced
       teachers, dedicated to shaping a brighter future for every child.
@@ -56,7 +57,7 @@ export default function Home() {
       </Link>
       <Link
         href="/about"
-        className="border-2 border-blue-900 text-blue-900 hover:bg-blue-900 hover:text-white font-medium px-8 py-3 rounded-lg transition-colors text-base"
+        className="bg-white/20 hover:bg-white/30 text-white border border-white/40 font-medium px-8 py-3 rounded-lg transition-colors text-base"
       >
         Hamare Baare Mein
       </Link>
