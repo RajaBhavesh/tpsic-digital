@@ -5,19 +5,20 @@ export const metadata: Metadata = {
   title: "About Us — Tejpal Smarak Inter College, Ayodhya",
   description: "Learn about Tejpal Smarak Inter College, Missa Baragaon, Ayodhya. UP Board affiliated school established in 2011. Meet our principal, faculty and explore our facilities.",
 };
+
 export default function About() {
   return (
     <main>
       {/* Hero */}
-      <section className="bg-gradient-to-b from-blue-50 to-white py-16 px-6 text-center">
-        <div className="max-w-4xl mx-auto">
-          <p className="text-orange-500 font-medium text-sm uppercase tracking-widest mb-4">
-            Hamare Baare Mein
+      <section className="relative bg-gradient-to-br from-blue-900 via-blue-800 to-blue-900 py-20 px-6 text-center overflow-hidden">
+        <div className="relative z-10 max-w-4xl mx-auto">
+          <p className="text-orange-400 font-medium text-sm uppercase tracking-widest mb-4">
+            हमारे बारे में
           </p>
-          <h1 className="text-4xl font-bold text-blue-900 mb-6">
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
             About Our School
           </h1>
-          <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+          <p className="text-blue-200 text-lg max-w-2xl mx-auto">
             Tejpal Smarak Inter College has been a beacon of quality education
             in Missa Baragaon, Ayodhya since 2011 — serving students from
             Nursery to Intermediate.
@@ -114,7 +115,7 @@ export default function About() {
               { icon: "⚡", label: "Generator Backup" },
               { icon: "🌐", label: "WiFi Campus" },
             ].map((item, index) => (
-              <div key={index} className="bg-white rounded-xl p-4 text-center border border-gray-100">
+              <div key={index} className="bg-white rounded-xl p-4 text-center border border-gray-100 hover:shadow-md hover:-translate-y-1 transition-all duration-300">
                 <div className="text-3xl mb-2">{item.icon}</div>
                 <p className="text-gray-700 text-sm font-medium">{item.label}</p>
               </div>
@@ -123,13 +124,13 @@ export default function About() {
         </div>
       </section>
 
-      {/* Campus Photos */}
+      {/* Campus Photos — Fixed */}
       <section className="py-16 px-6">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-2xl font-bold text-blue-900 text-center mb-10">
             Our Campus
           </h2>
-          <div className="grid grid-cols-3 gap-4">
+          <div className="grid grid-cols-3 gap-3">
             {[
               { src: "/images/eight.jpg", alt: "School Building" },
               { src: "/images/five.jpg", alt: "Lab" },
@@ -138,11 +139,12 @@ export default function About() {
               { src: "/images/four.jpg", alt: "School Bus" },
               { src: "/images/foutenn.jpg", alt: "Office" },
             ].map((photo, index) => (
-              <div key={index} className="rounded-xl overflow-hidden h-44">
+              <div key={index} className="rounded-xl overflow-hidden relative" style={{paddingBottom: "75%"}}>
                 <img
                   src={photo.src}
                   alt={photo.alt}
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                  style={{position: "absolute", top: 0, left: 0, width: "100%", height: "100%", objectFit: "cover"}}
+                  className="hover:scale-105 transition-transform duration-300"
                 />
               </div>
             ))}
@@ -150,137 +152,122 @@ export default function About() {
         </div>
       </section>
 
-{/* Achievements */}
-<section className="py-16 px-6" style={{background: "linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #0f172a 100%)"}}>
-  <div className="max-w-4xl mx-auto text-center">
-    <p className="text-orange-400 font-medium text-sm uppercase tracking-widest mb-4">
-      Our Pride
-    </p>
-    <h2 className="text-3xl font-bold text-white mb-3">
-      Hall of Fame 🏆
-    </h2>
-    <p className="text-blue-300 text-sm mb-12 max-w-xl mx-auto">
-      From Missa Baragaon to IITs and Medical colleges — our students prove that greatness has no address.
-    </p>
+      {/* Achievements */}
+      <section className="py-16 px-6" style={{background: "linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #0f172a 100%)"}}>
+        <div className="max-w-4xl mx-auto text-center">
+          <p className="text-orange-400 font-medium text-sm uppercase tracking-widest mb-4">
+            Our Pride
+          </p>
+          <h2 className="text-3xl font-bold text-white mb-3">
+            Hall of Fame 🏆
+          </h2>
+          <p className="text-blue-300 text-sm mb-12 max-w-xl mx-auto">
+            From Missa Baragaon to IITs and Medical colleges — our students prove that greatness has no address.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+            <div className="rounded-2xl p-6 text-left" style={{background: "rgba(255,255,255,0.07)", border: "1px solid rgba(249,115,22,0.4)"}}>
+              <div className="flex items-center gap-4 mb-5">
+                <div className="w-14 h-14 rounded-full flex items-center justify-center font-bold text-white text-lg" style={{background: "linear-gradient(135deg, #f97316, #ea580c)"}}>RB</div>
+                <div className="flex-1">
+                  <p className="text-white font-bold text-base">Raja Bhavesh</p>
+                  <p className="text-blue-300 text-xs mt-0.5">TSIC Alumni</p>
+                </div>
+                <div className="flex flex-col gap-1">
+                  <span className="bg-orange-500 text-white text-xs px-3 py-1 rounded-full text-center">JEE Advanced</span>
+                  <span className="bg-orange-700 text-white text-xs px-3 py-1 rounded-full text-center">IIT BHU</span>
+                </div>
+              </div>
+              <div className="flex flex-col gap-2">
+                <div className="flex items-center gap-2 bg-white/5 rounded-lg px-3 py-2">
+                  <span className="text-orange-400 text-xs font-medium w-28">District Rank 3</span>
+                  <span className="text-blue-200 text-xs">High School — Ayodhya (2018)</span>
+                </div>
+                <div className="flex items-center gap-2 bg-white/5 rounded-lg px-3 py-2">
+                  <span className="text-orange-400 text-xs font-medium w-28">District Rank 1 🥇</span>
+                  <span className="text-blue-200 text-xs">Intermediate — Ayodhya (2020)</span>
+                </div>
+                <div className="flex items-center gap-2 bg-white/5 rounded-lg px-3 py-2">
+                  <span className="text-orange-400 text-xs font-medium w-28">JEE Qualified</span>
+                  <span className="text-blue-200 text-xs">Mains & Advanced — IIT BHU (2021)</span>
+                </div>
+              </div>
+            </div>
 
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+            <div className="rounded-2xl p-6 text-left" style={{background: "rgba(255,255,255,0.07)", border: "1px solid rgba(34,197,94,0.4)"}}>
+              <div className="flex items-center gap-4 mb-5">
+                <div className="w-14 h-14 rounded-full flex items-center justify-center font-bold text-white text-lg" style={{background: "linear-gradient(135deg, #22c55e, #16a34a)"}}>RK</div>
+                <div className="flex-1">
+                  <p className="text-white font-bold text-base">Renu Kumari</p>
+                  <p className="text-blue-300 text-xs mt-0.5">TSIC Alumni</p>
+                </div>
+                <div className="flex flex-col gap-1">
+                  <span className="bg-green-500 text-white text-xs px-3 py-1 rounded-full text-center">NEET</span>
+                  <span className="bg-green-700 text-white text-xs px-3 py-1 rounded-full text-center">MBBS</span>
+                </div>
+              </div>
+              <div className="flex flex-col gap-2">
+                <div className="flex items-center gap-2 bg-white/5 rounded-lg px-3 py-2">
+                  <span className="text-green-400 text-xs font-medium w-28">NEET Qualified</span>
+                  <span className="text-blue-200 text-xs">Secured MBBS Admission (2019)</span>
+                </div>
+                <div className="flex items-center gap-2 bg-white/5 rounded-lg px-3 py-2">
+                  <span className="text-green-400 text-xs font-medium w-28">Medical Doctor</span>
+                  <span className="text-blue-200 text-xs">From TSIC to MBBS — a proud journey</span>
+                </div>
+              </div>
+            </div>
 
-      {/* Raja Bhavesh - JEE */}
-      <div className="rounded-2xl p-6 text-left" style={{background: "rgba(255,255,255,0.07)", border: "1px solid rgba(249,115,22,0.4)"}}>
-        <div className="flex items-center gap-4 mb-5">
-          <div className="w-14 h-14 rounded-full flex items-center justify-center font-bold text-white text-lg" style={{background: "linear-gradient(135deg, #f97316, #ea580c)"}}>
-            RB
-          </div>
-          <div className="flex-1">
-            <p className="text-white font-bold text-base">Raja Bhavesh</p>
-            <p className="text-blue-300 text-xs mt-0.5">TSIC Alumni</p>
-          </div>
-          <div className="flex flex-col gap-1">
-            <span className="bg-orange-500 text-white text-xs px-3 py-1 rounded-full text-center">JEE Advanced</span>
-            <span className="bg-orange-700 text-white text-xs px-3 py-1 rounded-full text-center">IIT BHU</span>
-          </div>
-        </div>
-        <div className="flex flex-col gap-2">
-          <div className="flex items-center gap-2 bg-white/5 rounded-lg px-3 py-2">
-            <span className="text-orange-400 text-xs font-medium w-28">District Rank 3</span>
-            <span className="text-blue-200 text-xs">High School — Ayodhya (2018)</span>
-          </div>
-          <div className="flex items-center gap-2 bg-white/5 rounded-lg px-3 py-2">
-            <span className="text-orange-400 text-xs font-medium w-28">District Rank 1 🥇</span>
-            <span className="text-blue-200 text-xs">Intermediate — Ayodhya (2020)</span>
-          </div>
-          <div className="flex items-center gap-2 bg-white/5 rounded-lg px-3 py-2">
-            <span className="text-orange-400 text-xs font-medium w-28">JEE Qualified</span>
-            <span className="text-blue-200 text-xs">Mains & Advanced — IIT BHU (2021)</span>
-          </div>
-        </div>
-      </div>
+            <div className="rounded-2xl p-6 text-left" style={{background: "rgba(255,255,255,0.07)", border: "1px solid rgba(34,197,94,0.4)"}}>
+              <div className="flex items-center gap-4 mb-5">
+                <div className="w-14 h-14 rounded-full flex items-center justify-center font-bold text-white text-lg" style={{background: "linear-gradient(135deg, #22c55e, #16a34a)"}}>AS</div>
+                <div className="flex-1">
+                  <p className="text-white font-bold text-base">Agrima Singh</p>
+                  <p className="text-blue-300 text-xs mt-0.5">TSIC Alumni</p>
+                </div>
+                <div className="flex flex-col gap-1">
+                  <span className="bg-green-500 text-white text-xs px-3 py-1 rounded-full text-center">NEET 2024</span>
+                  <span className="bg-green-700 text-white text-xs px-3 py-1 rounded-full text-center">MBBS</span>
+                </div>
+              </div>
+              <div className="flex flex-col gap-2">
+                <div className="flex items-center gap-2 bg-white/5 rounded-lg px-3 py-2">
+                  <span className="text-green-400 text-xs font-medium w-28">District Rank 4</span>
+                  <span className="text-blue-200 text-xs">High School — Ayodhya (2020)</span>
+                </div>
+                <div className="flex items-center gap-2 bg-white/5 rounded-lg px-3 py-2">
+                  <span className="text-green-400 text-xs font-medium w-28">NEET Qualified</span>
+                  <span className="text-blue-200 text-xs">Secured MBBS Admission (2024)</span>
+                </div>
+              </div>
+            </div>
 
-      {/* Renu Kumari - NEET */}
-      <div className="rounded-2xl p-6 text-left" style={{background: "rgba(255,255,255,0.07)", border: "1px solid rgba(34,197,94,0.4)"}}>
-        <div className="flex items-center gap-4 mb-5">
-          <div className="w-14 h-14 rounded-full flex items-center justify-center font-bold text-white text-lg" style={{background: "linear-gradient(135deg, #22c55e, #16a34a)"}}>
-            RK
-          </div>
-          <div className="flex-1">
-            <p className="text-white font-bold text-base">Renu Kumari</p>
-            <p className="text-blue-300 text-xs mt-0.5">TSIC Alumni</p>
-          </div>
-          <div className="flex flex-col gap-1">
-            <span className="bg-green-500 text-white text-xs px-3 py-1 rounded-full text-center">NEET</span>
-            <span className="bg-green-700 text-white text-xs px-3 py-1 rounded-full text-center">MBBS</span>
-          </div>
-        </div>
-        <div className="flex flex-col gap-2">
-          <div className="flex items-center gap-2 bg-white/5 rounded-lg px-3 py-2">
-            <span className="text-green-400 text-xs font-medium w-28">NEET Qualified</span>
-            <span className="text-blue-200 text-xs">Secured MBBS Admission (2019)</span>
-          </div>
-          <div className="flex items-center gap-2 bg-white/5 rounded-lg px-3 py-2">
-            <span className="text-green-400 text-xs font-medium w-28">Medical Doctor</span>
-            <span className="text-blue-200 text-xs">From TSIC to MBBS — a proud journey</span>
-          </div>
-        </div>
-      </div>
-
-      {/* Agrima Singh - NEET */}
-      <div className="rounded-2xl p-6 text-left" style={{background: "rgba(255,255,255,0.07)", border: "1px solid rgba(34,197,94,0.4)"}}>
-        <div className="flex items-center gap-4 mb-5">
-          <div className="w-14 h-14 rounded-full flex items-center justify-center font-bold text-white text-lg" style={{background: "linear-gradient(135deg, #22c55e, #16a34a)"}}>
-            AS
-          </div>
-          <div className="flex-1">
-            <p className="text-white font-bold text-base">Agrima Singh</p>
-            <p className="text-blue-300 text-xs mt-0.5">TSIC Alumni</p>
-          </div>
-          <div className="flex flex-col gap-1">
-            <span className="bg-green-500 text-white text-xs px-3 py-1 rounded-full text-center">NEET 2024</span>
-            <span className="bg-green-700 text-white text-xs px-3 py-1 rounded-full text-center">MBBS</span>
+            <div className="rounded-2xl p-6 text-left" style={{background: "rgba(255,255,255,0.07)", border: "1px solid rgba(99,102,241,0.4)"}}>
+              <div className="flex items-center gap-4 mb-5">
+                <div className="w-14 h-14 rounded-full flex items-center justify-center text-2xl" style={{background: "linear-gradient(135deg, #6366f1, #4f46e5)"}}>🏅</div>
+                <div className="flex-1">
+                  <p className="text-white font-bold text-base">UP Board Excellence</p>
+                  <p className="text-blue-300 text-xs mt-0.5">District Level Recognition</p>
+                </div>
+                <span className="bg-indigo-500 text-white text-xs px-3 py-1 rounded-full">UP Board</span>
+              </div>
+              <div className="flex flex-col gap-2">
+                <div className="flex items-center gap-2 bg-white/5 rounded-lg px-3 py-2">
+                  <span className="text-indigo-400 text-xs font-medium w-28">Rank 1 — District</span>
+                  <span className="text-blue-200 text-xs">Intermediate, Ayodhya (2020)</span>
+                </div>
+                <div className="flex items-center gap-2 bg-white/5 rounded-lg px-3 py-2">
+                  <span className="text-indigo-400 text-xs font-medium w-28">Rank 3 — District</span>
+                  <span className="text-blue-200 text-xs">High School, Ayodhya (2018)</span>
+                </div>
+                <div className="flex items-center gap-2 bg-white/5 rounded-lg px-3 py-2">
+                  <span className="text-indigo-400 text-xs font-medium w-28">Rank 4 — District</span>
+                  <span className="text-blue-200 text-xs">High School, Ayodhya (2020)</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-        <div className="flex flex-col gap-2">
-          <div className="flex items-center gap-2 bg-white/5 rounded-lg px-3 py-2">
-            <span className="text-green-400 text-xs font-medium w-28">District Rank 4</span>
-            <span className="text-blue-200 text-xs">High School — Ayodhya (2020)</span>
-          </div>
-          <div className="flex items-center gap-2 bg-white/5 rounded-lg px-3 py-2">
-            <span className="text-green-400 text-xs font-medium w-28">NEET Qualified</span>
-            <span className="text-blue-200 text-xs">Secured MBBS Admission (2024)</span>
-          </div>
-        </div>
-      </div>
-
-      {/* UP Board Stats */}
-      <div className="rounded-2xl p-6 text-left" style={{background: "rgba(255,255,255,0.07)", border: "1px solid rgba(99,102,241,0.4)"}}>
-        <div className="flex items-center gap-4 mb-5">
-          <div className="w-14 h-14 rounded-full flex items-center justify-center text-2xl" style={{background: "linear-gradient(135deg, #6366f1, #4f46e5)"}}>
-            🏅
-          </div>
-          <div className="flex-1">
-            <p className="text-white font-bold text-base">UP Board Excellence</p>
-            <p className="text-blue-300 text-xs mt-0.5">District Level Recognition</p>
-          </div>
-          <span className="bg-indigo-500 text-white text-xs px-3 py-1 rounded-full">UP Board</span>
-        </div>
-        <div className="flex flex-col gap-2">
-          <div className="flex items-center gap-2 bg-white/5 rounded-lg px-3 py-2">
-            <span className="text-indigo-400 text-xs font-medium w-28">Rank 1 — District</span>
-            <span className="text-blue-200 text-xs">Intermediate, Ayodhya (2020)</span>
-          </div>
-          <div className="flex items-center gap-2 bg-white/5 rounded-lg px-3 py-2">
-            <span className="text-indigo-400 text-xs font-medium w-28">Rank 3 — District</span>
-            <span className="text-blue-200 text-xs">High School, Ayodhya (2018)</span>
-          </div>
-          <div className="flex items-center gap-2 bg-white/5 rounded-lg px-3 py-2">
-            <span className="text-indigo-400 text-xs font-medium w-28">Rank 4 — District</span>
-            <span className="text-blue-200 text-xs">High School, Ayodhya (2020)</span>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
+      </section>
 
       {/* CTA */}
       <section className="py-16 px-6 text-center">

@@ -20,7 +20,7 @@ export default function Navbar() {
     <header>
       {/* Saffron Announcement Bar */}
       <div className="bg-orange-500 text-white text-center text-sm py-2 px-4">
-        🎉 Satra 2026-27 ki admissions shuru ho gayi hain — abhi sampark karein!
+        🎉 सत्र 2026-27 की Admissions शुरू हो गई हैं — अभी संपर्क करें!
       </div>
 
       {/* Main Navbar */}

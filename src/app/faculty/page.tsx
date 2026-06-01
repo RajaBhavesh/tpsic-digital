@@ -63,7 +63,7 @@ export default function Faculty() {
       <section className="relative bg-gradient-to-br from-blue-900 via-blue-800 to-blue-900 py-20 px-6 text-center overflow-hidden">
         <div className="relative z-10 max-w-4xl mx-auto">
           <p className="text-orange-400 font-medium text-sm uppercase tracking-widest mb-4">
-            Hamare Shikshak
+            हमारे शिक्षक
           </p>
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
             Our Faculty
@@ -172,7 +172,7 @@ export default function Faculty() {
             rel="noopener noreferrer"
             className="bg-orange-500 hover:bg-orange-600 text-white font-medium px-8 py-3 rounded-lg transition-colors"
           >
-            WhatsApp Karein — Abhi
+            WhatsApp करें — अभी
           </a>
         </div>
       </section>

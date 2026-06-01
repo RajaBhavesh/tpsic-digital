@@ -59,7 +59,7 @@ export default function Home() {
         href="/about"
         className="bg-white/20 hover:bg-white/30 text-white border border-white/40 font-medium px-8 py-3 rounded-lg transition-colors text-base"
       >
-        Hamare Baare Mein
+        हमारे बारे में
       </Link>
     </div>
   </div>
@@ -237,7 +237,7 @@ export default function Home() {
       <section className="bg-orange-500 py-12 px-6 text-center">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-2xl font-bold text-white mb-4">
-            Apne Bachche Ka Bhavishya Surakshit Karein
+            अपने बच्चे का भविष्य सुरक्षित करें
           </h2>
           <p className="text-orange-100 mb-8">
             Admissions open for 2026-27. Limited seats available.

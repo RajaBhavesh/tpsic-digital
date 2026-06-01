@@ -12,7 +12,7 @@ export default function Contact() {
       <section className="bg-gradient-to-b from-blue-50 to-white py-16 px-6 text-center">
         <div className="max-w-4xl mx-auto">
           <p className="text-orange-500 font-medium text-sm uppercase tracking-widest mb-4">
-            Sampark Karein
+            संपर्क करें
           </p>
           <h1 className="text-4xl font-bold text-blue-900 mb-6">
             Contact Us
