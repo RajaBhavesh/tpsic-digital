@@ -1,180 +1,182 @@
-import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Contact Us — Tejpal Smarak Inter College, Ayodhya",
   description: "Contact Tejpal Smarak Inter College, Missa Baragaon, Ayodhya. Phone: +91 99357 48696. Email: tejpalsmarakintercollege2011@gmail.com. Find us on Google Maps.",
 };
+
 export default function Contact() {
   return (
     <main>
       {/* Hero */}
-      <section className="bg-gradient-to-b from-blue-50 to-white py-16 px-6 text-center">
-        <div className="max-w-4xl mx-auto">
-          <p className="text-orange-500 font-medium text-sm uppercase tracking-widest mb-4">
+      <section className="relative bg-gradient-to-br from-blue-900 via-blue-800 to-blue-900 py-20 px-6 text-center overflow-hidden">
+        <div className="relative z-10 max-w-4xl mx-auto">
+          <p className="text-orange-400 font-medium text-sm uppercase tracking-widest mb-4">
             संपर्क करें
           </p>
-          <h1 className="text-4xl font-bold text-blue-900 mb-6">
-            Contact Us
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
+            Get In Touch
           </h1>
-          <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-            Have questions? We are here to help. Reach out to us
-            via WhatsApp, phone, or visit us directly.
+          <p className="text-blue-200 text-lg max-w-2xl mx-auto mb-8">
+            Have questions about admissions, fees, or anything else? We're here to help — reach out anytime.
           </p>
-        </div>
-      </section>
-
-      {/* Contact Cards */}
-      <section className="py-16 px-6">
-        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-6">
-          <div className="bg-white rounded-xl p-8 border border-gray-100 text-center">
-            <div className="text-4xl mb-4">📍</div>
-            <h3 className="font-bold text-blue-900 text-lg mb-3">Address</h3>
-            <p className="text-gray-600 text-sm leading-relaxed">
-              Tejpal Smarak Inter College<br />
-              Missa Baragaon, Ayodhya<br />
-              Uttar Pradesh, India
-            </p>
-          </div>
-          <div className="bg-white rounded-xl p-8 border border-gray-100 text-center">
-            <div className="text-4xl mb-4">📞</div>
-            <h3 className="font-bold text-blue-900 text-lg mb-3">Phone</h3>
-            <p className="text-gray-600 text-sm mb-4">
-              Available Monday to Saturday<br />
-              8:00 AM — 4:00 PM
-            </p>
-            <a
-              href="tel:+919935748696"
-              className="text-orange-500 font-medium hover:text-orange-600"
-            >
-              +91 99357 48696
-            </a>
-          </div>
-          <div className="bg-white rounded-xl p-8 border border-gray-100 text-center">
-            <div className="text-4xl mb-4">✉️</div>
-            <h3 className="font-bold text-blue-900 text-lg mb-3">Email</h3>
-            <p className="text-gray-600 text-sm mb-4">
-              For official correspondence<br />
-              and inquiries
-            </p>
-            <a
-              href="mailto:tejpalsmarakintercollege2011@gmail.com"
-              className="text-orange-500 font-medium hover:text-orange-600 text-xs break-all"
-            >
-              tejpalsmarakintercollege2011@gmail.com
-            </a>
-          </div>
-          <div className="bg-white rounded-xl p-8 border border-gray-100 text-center">
-            <div className="text-4xl mb-4">💬</div>
-            <h3 className="font-bold text-blue-900 text-lg mb-3">WhatsApp</h3>
-            <p className="text-gray-600 text-sm mb-4">
-              Fastest way to reach us.<br />
-              We reply within a few hours.
-            </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="https://wa.me/919935748696"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-green-500 hover:bg-green-600 text-white text-sm font-medium px-6 py-2 rounded-lg transition-colors"
+              className="bg-green-500 hover:bg-green-600 text-white font-bold px-8 py-3 rounded-lg transition-colors"
             >
-              WhatsApp Now
+              💬 WhatsApp करें — अभी
+            </a>
+            <a
+              href="tel:+919935748696"
+              className="bg-white/20 hover:bg-white/30 text-white border border-white/40 font-medium px-8 py-3 rounded-lg transition-colors"
+            >
+              📞 Call करें
             </a>
           </div>
         </div>
       </section>
 
-      {/* Google Maps */}
-      <section className="py-16 px-6">
-        <div className="max-w-5xl mx-auto">
-          <h2 className="text-2xl font-bold text-blue-900 text-center mb-10">
-            Find Us on Map
-          </h2>
-          <div className="rounded-xl overflow-hidden border border-gray-100">
-            <iframe
-              src="https://maps.google.com/maps?q=26.75828968491423,81.82408099081395&z=15&output=embed"
-              width="100%"
-              height="400"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            />
-          </div>
-        </div>
-      </section>
+{/* Contact Cards */}
+<section className="py-16 px-6 bg-white">
+  <div className="max-w-5xl mx-auto">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
 
-      {/* Timing */}
+      <div className="bg-white rounded-2xl p-6 text-center border border-gray-100 hover:border-blue-200 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+        <div className="w-14 h-14 rounded-full bg-blue-50 flex items-center justify-center text-2xl mx-auto mb-4">📍</div>
+        <h3 className="font-bold text-blue-900 text-base mb-3">Address</h3>
+        <p className="text-gray-500 text-sm leading-relaxed">
+          Missa Baragaon, Ruduli<br />Ayodhya, UP — 224116
+        </p>
+      </div>
+
+      <div className="bg-white rounded-2xl p-6 text-center border border-gray-100 hover:border-blue-200 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+        <div className="w-14 h-14 rounded-full bg-blue-50 flex items-center justify-center text-2xl mx-auto mb-4">📞</div>
+        <h3 className="font-bold text-blue-900 text-base mb-3">Phone</h3>
+        <p className="text-gray-400 text-xs mb-3">Mon — Sat, 8AM — 4PM</p>
+        <a href="tel:+919935748696" className="text-orange-500 hover:text-orange-600 font-medium text-sm block transition-colors">+91 99357 48696</a>
+        <a href="tel:+919415529912" className="text-orange-500 hover:text-orange-600 font-medium text-sm block transition-colors mt-1">+91 94155 29912</a>
+      </div>
+
+      <div className="bg-white rounded-2xl p-6 text-center border border-gray-100 hover:border-blue-200 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+        <div className="w-14 h-14 rounded-full bg-blue-50 flex items-center justify-center text-2xl mx-auto mb-4">✉️</div>
+        <h3 className="font-bold text-blue-900 text-base mb-3">Email</h3>
+        <p className="text-gray-400 text-xs mb-3">Official correspondence</p>
+        <a href="mailto:tejpalsmarakintercollege2011@gmail.com" className="text-orange-500 hover:text-orange-600 font-medium text-xs break-all transition-colors">
+          tejpalsmarakintercollege2011@gmail.com
+        </a>
+      </div>
+
+      <div className="bg-white rounded-2xl p-6 text-center border border-gray-100 hover:border-green-200 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+        <div className="w-14 h-14 rounded-full bg-green-50 flex items-center justify-center text-2xl mx-auto mb-4">💬</div>
+        <h3 className="font-bold text-blue-900 text-base mb-3">WhatsApp</h3>
+        <p className="text-gray-400 text-xs mb-4">Fastest response<br />Reply within hours</p>
+        <a
+          href="https://wa.me/919935748696"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-green-500 hover:bg-green-600 text-white font-bold text-xs px-5 py-2 rounded-full transition-colors"
+        >
+          Message Now
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+      {/* Map + Timings side by side */}
       <section className="bg-gray-50 py-16 px-6">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="text-2xl font-bold text-blue-900 text-center mb-10">
-            School Timings
-          </h2>
-          <div className="bg-white rounded-xl border border-gray-100 overflow-hidden">
-            <div className="grid grid-cols-2 border-b border-gray-100 p-4">
-              <p className="font-medium text-blue-900">Monday — Saturday</p>
-              <p className="text-gray-600">8:00 AM — 2:30 PM</p>
-            </div>
-            <div className="grid grid-cols-2 border-b border-gray-100 p-4 bg-gray-50">
-              <p className="font-medium text-blue-900">Office Hours</p>
-              <p className="text-gray-600">8:00 AM — 4:00 PM</p>
-            </div>
-            <div className="grid grid-cols-2 p-4">
-              <p className="font-medium text-blue-900">Sunday</p>
-              <p className="text-gray-600">Closed</p>
-            </div>
-          </div>
-        </div>
-      </section>
+        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
 
-      {/* School Details */}
-      <section className="py-16 px-6">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="text-2xl font-bold text-blue-900 text-center mb-10">
-            School Details
-          </h2>
-          <div className="bg-white rounded-xl border border-gray-100 overflow-hidden">
-            <div className="grid grid-cols-2 border-b border-gray-100 p-4">
-              <p className="font-medium text-blue-900">School Code</p>
-              <p className="text-gray-600">621282</p>
-            </div>
-            <div className="grid grid-cols-2 border-b border-gray-100 p-4 bg-gray-50">
-              <p className="font-medium text-blue-900">U-DISE Code</p>
-              <p className="text-gray-600">09470911607</p>
-            </div>
-            <div className="grid grid-cols-2 border-b border-gray-100 p-4">
-              <p className="font-medium text-blue-900">Principal</p>
-              <p className="text-gray-600">Rajesh Kumar</p>
-            </div>
-            <div className="grid grid-cols-2 border-b border-gray-100 p-4 bg-gray-50">
-              <p className="font-medium text-blue-900">Affiliated</p>
-              <p className="text-gray-600">UP Board</p>
-            </div>
-            <div className="grid grid-cols-2 p-4">
-              <p className="font-medium text-blue-900">Recognition</p>
-              <p className="text-gray-600">High School: 2011, Intermediate: 2016</p>
+          {/* Map */}
+          <div>
+            <h2 className="text-xl font-bold text-blue-900 mb-5">
+              📍 Find Us on Map
+            </h2>
+            <div className="rounded-2xl overflow-hidden border border-gray-200 shadow-sm">
+              <iframe
+                src="https://maps.google.com/maps?q=26.75828968491423,81.82408099081395&z=15&output=embed"
+                width="100%"
+                height="300"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
             </div>
           </div>
+
+          {/* Timings + School Details */}
+          <div>
+            <h2 className="text-xl font-bold text-blue-900 mb-5">
+              🕐 School Timings
+            </h2>
+            <div className="bg-white rounded-2xl border border-gray-100 overflow-hidden mb-5">
+              <div className="flex items-center justify-between p-4 border-b border-gray-100">
+                <p className="font-medium text-blue-900 text-sm">Monday — Saturday</p>
+                <span className="bg-green-100 text-green-700 text-xs px-3 py-1 rounded-full font-medium">8AM — 2:30PM</span>
+              </div>
+              <div className="flex items-center justify-between p-4 border-b border-gray-100 bg-gray-50">
+                <p className="font-medium text-blue-900 text-sm">Office Hours</p>
+                <span className="bg-blue-100 text-blue-700 text-xs px-3 py-1 rounded-full font-medium">8AM — 4PM</span>
+              </div>
+              <div className="flex items-center justify-between p-4">
+                <p className="font-medium text-blue-900 text-sm">Sunday</p>
+                <span className="bg-red-100 text-red-600 text-xs px-3 py-1 rounded-full font-medium">Closed</span>
+              </div>
+            </div>
+
+            <h2 className="text-xl font-bold text-blue-900 mb-5">
+              🏫 School Details
+            </h2>
+            <div className="bg-white rounded-2xl border border-gray-100 overflow-hidden">
+              {[
+                { label: "School Code", value: "621282" },
+                { label: "U-DISE Code", value: "09470911607" },
+                { label: "Principal", value: "Rajesh Kumar" },
+                { label: "Affiliated", value: "UP Board" },
+                { label: "High School Est.", value: "2011" },
+                { label: "Intermediate Est.", value: "2016" },
+              ].map((item, index) => (
+                <div key={index} className={`flex items-center justify-between px-4 py-3 ${index % 2 === 0 ? "bg-white" : "bg-gray-50"} ${index < 5 ? "border-b border-gray-100" : ""}`}>
+                  <p className="text-gray-500 text-xs">{item.label}</p>
+                  <p className="text-blue-900 font-medium text-xs">{item.value}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
         </div>
       </section>
 
       {/* CTA */}
-      <section className="py-16 px-6 text-center">
+      <section className="bg-blue-900 py-14 px-6 text-center">
         <div className="max-w-2xl mx-auto">
-          <h2 className="text-2xl font-bold text-blue-900 mb-4">
-            Want to Visit Us?
+          <h2 className="text-2xl font-bold text-white mb-3">
+            Want to Visit Our School?
           </h2>
-          <p className="text-gray-600 mb-8">
-            We welcome parents and students to visit our school anytime
-            during office hours. Come meet our teachers and see our facilities.
+          <p className="text-blue-200 mb-8">
+            Parents and students are always welcome during office hours. Come meet our teachers and see our facilities.
           </p>
-          <a
-            href="https://wa.me/919935748696"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-orange-500 hover:bg-orange-600 text-white font-medium px-8 py-3 rounded-lg transition-colors"
-          >
-            Fix a Visit — WhatsApp Karein
-          </a>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href="https://wa.me/919935748696"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-orange-500 hover:bg-orange-600 text-white font-bold px-8 py-3 rounded-lg transition-colors"
+            >
+              💬 Visit Fix करें — WhatsApp
+            </a>
+            <a
+              href="tel:+919935748696"
+              className="bg-white/10 hover:bg-white/20 text-white border border-white/30 font-medium px-8 py-3 rounded-lg transition-colors"
+            >
+              📞 Call करें
+            </a>
+          </div>
         </div>
       </section>
     </main>
