@@ -4,26 +4,10 @@ export default function Footer() {
   return (
     <footer className="mt-auto bg-blue-900">
 
-      {/* CTA Strip */}
-      <div className="bg-orange-500 py-3 px-6">
-        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="text-white text-sm font-medium">
-            🎉 Admissions Open for 2026-27 — Limited Seats Available
-          </p>
-          <a
-            href="https://wa.me/919935748696"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-white text-orange-500 font-bold px-5 py-1.5 rounded-full text-xs hover:bg-orange-50 transition-colors whitespace-nowrap"
-          >
-            Apply Now →
-          </a>
-        </div>
-      </div>
 
       {/* Main Footer */}
-      <div className="max-w-7xl mx-auto px-6 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
+      <div className="max-w-7xl mx-auto px-6 py-8">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
 
           {/* Column 1: Branding */}
           <div className="md:col-span-1">
@@ -132,7 +116,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-blue-700 mt-10 pt-6 flex flex-col md:flex-row items-center justify-between gap-3">
+        <div className="border-t border-blue-700 mt-10 pt-4 flex flex-col md:flex-row items-center justify-between gap-3">
           <p className="text-blue-300 text-xs text-center md:text-left">
             © 2026 Tejpal Smarak Inter College, Missa Baragaon, Ayodhya. All rights reserved.
           </p>
