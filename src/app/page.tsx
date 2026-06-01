@@ -202,7 +202,7 @@ export default function Home() {
   </div>
 </section>
 
-      {/* Campus Gallery */}
+{/* Campus Gallery */}
 <section className="py-16 px-6 bg-white">
   <div className="max-w-5xl mx-auto">
     <p className="text-orange-500 font-medium text-sm uppercase tracking-widest text-center mb-3">
@@ -211,7 +211,7 @@ export default function Home() {
     <h2 className="text-3xl font-bold text-blue-900 text-center mb-10">
       Life at TSIC
     </h2>
-    <div className="grid grid-cols-3 gap-4">
+    <div className="grid grid-cols-3 gap-2">
       {[
         { src: "/images/eight.jpg", alt: "School Building" },
         { src: "/images/eleven.jpg", alt: "Campus" },
@@ -220,11 +220,12 @@ export default function Home() {
         { src: "/images/four.jpg", alt: "School Bus" },
         { src: "/images/nine.jpg", alt: "Staff Meeting" },
       ].map((photo, index) => (
-        <div key={index} className="rounded-xl overflow-hidden h-44 shadow-sm">
+        <div key={index} className="rounded-xl overflow-hidden relative" style={{paddingBottom: "75%"}}>
           <img
             src={photo.src}
             alt={photo.alt}
-            className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+            style={{position: "absolute", top: 0, left: 0, width: "100%", height: "100%", objectFit: "cover"}}
+            className="hover:scale-105 transition-transform duration-300"
           />
         </div>
       ))}
@@ -247,7 +248,7 @@ export default function Home() {
             rel="noopener noreferrer"
             className="bg-white text-orange-500 hover:bg-orange-50 font-bold px-8 py-3 rounded-lg transition-colors"
           >
-            WhatsApp Karein — Abhi Apply Karein
+            WhatsApp — Apply Now
           </a>
         </div>
       </section>
