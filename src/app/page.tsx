@@ -1,4 +1,102 @@
+"use client";
+
 import Link from "next/link";
+import Image from "next/image";
+import { useState, useEffect } from "react";
+
+// Hero slider images
+const heroSlides = [
+  { src: "/images/one.jpg",    caption: "Our School Campus" },
+  { src: "/images/eight.jpg",  caption: "School Building" },
+  { src: "/images/eleven.jpg", caption: "Campus Life" },
+  { src: "/images/four.jpg",   caption: "School Bus" },
+  { src: "/images/seven.jpg",  caption: "Students" },
+  { src: "/images/six.jpg",    caption: "Student Activities" },
+  { src: "/images/ten.jpg",    caption: "School Grounds" },
+];
+
+function HeroSlider() {
+  const [current, setCurrent] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % heroSlides.length);
+    }, 4500);
+    return () => clearInterval(timer);
+  }, []);
+
+  const goTo = (index: number) => setCurrent(index);
+
+  return (
+    <section className="relative h-[88vh] min-h-[520px] max-h-[800px] overflow-hidden">
+      
+      {/* Sab images stack karo — sirf current wali visible */}
+      {heroSlides.map((slide, i) => (
+        <div
+          key={i}
+          className="absolute inset-0 transition-opacity duration-1000"
+          style={{ opacity: i === current ? 1 : 0 }}
+        >
+          <Image
+            src={slide.src}
+            alt={slide.caption}
+            fill
+            className="object-cover"
+            priority={i === 0}
+            sizes="100vw"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-blue-950/90 via-blue-900/60 to-blue-900/40" />
+        </div>
+      ))}
+
+      {/* Content — same as before */}
+      <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-6">
+        <p className="text-orange-400 font-medium text-xs uppercase tracking-[0.2em] mb-4">
+          UP Board Affiliated — Est. 2011
+        </p>
+        <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight mb-4 drop-shadow-lg">
+          Tejpal Smarak<br className="hidden md:block" /> Inter College
+        </h1>
+        <p className="text-xl md:text-2xl text-orange-200 mb-3" lang="hi">
+          शिक्षा से सशक्तिकरण — गाँव से उज्ज्वल भविष्य तक
+        </p>
+        <p className="text-blue-200 text-sm md:text-base max-w-2xl mx-auto mb-10">
+          Located in Missa Baragaon, Ayodhya — providing quality education to
+          300+ students. Dedicated to shaping a brighter future for every child.
+        </p>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <Link href="/admissions"
+            className="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-8 py-3 rounded-lg transition-all duration-200 shadow-lg hover:shadow-orange-500/30 hover:-translate-y-0.5">
+            Admission Inquiry
+          </Link>
+          <Link href="/about"
+            className="bg-white/15 hover:bg-white/25 text-white border border-white/40 font-medium px-8 py-3 rounded-lg transition-all duration-200 backdrop-blur-sm">
+            हमारे बारे में
+          </Link>
+        </div>
+      </div>
+
+      {/* Dots */}
+      <div className="absolute bottom-6 left-0 right-0 z-20 flex justify-center gap-2">
+        {heroSlides.map((_, i) => (
+          <button key={i} onClick={() => goTo(i)} aria-label={`Slide ${i + 1}`}
+            className={`rounded-full transition-all duration-300 ${
+              i === current ? "bg-orange-400 w-6 h-2" : "bg-white/50 hover:bg-white/80 w-2 h-2"
+            }`}
+          />
+        ))}
+      </div>
+
+      {/* Arrows */}
+      <button onClick={() => goTo((current - 1 + heroSlides.length) % heroSlides.length)}
+        className="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-black/30 hover:bg-black/50 text-white rounded-full w-10 h-10 flex items-center justify-center text-xl transition-all"
+        aria-label="Previous">‹</button>
+      <button onClick={() => goTo((current + 1) % heroSlides.length)}
+        className="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-black/30 hover:bg-black/50 text-white rounded-full w-10 h-10 flex items-center justify-center text-xl transition-all"
+        aria-label="Next">›</button>
+    </section>
+  );
+}
 
 export default function Home() {
   const notices = [
@@ -28,42 +126,74 @@ export default function Home() {
     },
   ];
 
+  const features = [
+    {
+      icon: (
+        <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l9-5-9-5-9 5 9 5z" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l6.16-3.422A12.083 12.083 0 0121 13c0 4.97-4.03 9-9 9s-9-4.03-9-9c0-.538.045-1.065.13-1.578L12 14z" />
+        </svg>
+      ),
+      color: "bg-blue-50 text-blue-700",
+      title: "Experienced Teachers",
+      desc: "7 dedicated faculty members with up to 11 years of teaching experience. Led by Principal Rajesh Kumar.",
+    },
+    {
+      icon: (
+        <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+        </svg>
+      ),
+      color: "bg-orange-50 text-orange-600",
+      title: "5 Smart Classes",
+      desc: "Modern smart classrooms with digital learning tools — bringing 21st century education to Ayodhya.",
+    },
+    {
+      icon: (
+        <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+        </svg>
+      ),
+      color: "bg-green-50 text-green-700",
+      title: "Science & Computer Lab",
+      desc: "Fully equipped Science laboratory and Computer lab with internet/WiFi facility for students.",
+    },
+    {
+      icon: (
+        <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.069A1 1 0 0121 8.82v6.36a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+        </svg>
+      ),
+      color: "bg-purple-50 text-purple-700",
+      title: "9 CCTV Cameras",
+      desc: "Complete campus surveillance with 9 CCTV cameras — ensuring safety and security of every student.",
+    },
+    {
+      icon: (
+        <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+        </svg>
+      ),
+      color: "bg-yellow-50 text-yellow-700",
+      title: "Library & Sports",
+      desc: "Well-stocked library and sports ground — because education is not just academics, it's overall growth.",
+    },
+    {
+      icon: (
+        <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+        </svg>
+      ),
+      color: "bg-red-50 text-red-600",
+      title: "Full Infrastructure",
+      desc: "Generator backup, clean drinking water, separate toilets for boys & girls, boundary wall and iron gate.",
+    },
+  ];
+
   return (
     <main>
-      {/* Hero Section */}
-<section className="relative bg-gradient-to-br from-blue-900 via-blue-800 to-blue-900 py-24 px-6 text-center overflow-hidden">
-  <div className="absolute inset-0 opacity-10" style={{backgroundImage: "radial-gradient(circle at 20% 50%, #f97316 0%, transparent 50%), radial-gradient(circle at 80% 20%, #ffffff 0%, transparent 40%)"}}></div>
-  <div className="relative z-10 max-w-4xl mx-auto">
-    <p className="text-orange-400 font-medium text-sm uppercase tracking-widest mb-4">
-      UP Board Affiliated — Est. 2011
-    </p>
-    <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-6">
-      Tejpal Smarak Inter College
-    </h1>
-    <p className="text-xl text-orange-200 mb-4 font-[var(--font-hind)]" lang="hi">
-      शिक्षा से सशक्तिकरण — गाँव से उज्ज्वल भविष्य तक
-    </p>
-    <p className="text-blue-200 text-base max-w-2xl mx-auto mb-10">
-      Located in Missa Baragaon, Ayodhya, we provide quality education
-      to 300+ students. UP Board affiliated school with experienced
-      teachers, dedicated to shaping a brighter future for every child.
-    </p>
-    <div className="flex flex-col sm:flex-row gap-4 justify-center">
-      <Link
-        href="/admissions"
-        className="bg-orange-500 hover:bg-orange-600 text-white font-medium px-8 py-3 rounded-lg transition-colors text-base"
-      >
-        Admission Inquiry
-      </Link>
-      <Link
-        href="/about"
-        className="bg-white/20 hover:bg-white/30 text-white border border-white/40 font-medium px-8 py-3 rounded-lg transition-colors text-base"
-      >
-        हमारे बारे में
-      </Link>
-    </div>
-  </div>
-</section>
+      {/* Hero Slider */}
+      <HeroSlider />
 
       {/* Stats Bar */}
       <section className="bg-blue-900 text-white py-8 px-6">
@@ -83,33 +213,33 @@ export default function Home() {
         </div>
       </section>
 
-{/* Why Choose Us */}
-<section className="py-16 px-6 bg-white">
-  <div className="max-w-5xl mx-auto">
-    <p className="text-orange-500 font-medium text-sm uppercase tracking-widest text-center mb-3">
-      Why Choose Us
-    </p>
-    <h2 className="text-3xl font-bold text-blue-900 text-center mb-12">
-      What Makes Us Different
-    </h2>
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-      {[
-        { icon: "🎓", title: "Experienced Teachers", desc: "7 dedicated faculty members with up to 11 years of teaching experience. Led by Principal Rajesh Kumar." },
-        { icon: "📱", title: "5 Smart Classes", desc: "Modern smart classrooms with digital learning tools — bringing 21st century education to Ayodhya." },
-        { icon: "🔬", title: "Science & Computer Lab", desc: "Fully equipped Science laboratory and Computer lab with internet/WiFi facility for students." },
-        { icon: "📷", title: "9 CCTV Cameras", desc: "Complete campus surveillance with 9 CCTV cameras — ensuring safety and security of every student." },
-        { icon: "📚", title: "Library & Sports", desc: "Well-stocked library and sports ground — because education is not just academics, it's overall growth." },
-        { icon: "⚡", title: "Full Infrastructure", desc: "Generator backup, clean drinking water, separate toilets for boys & girls, boundary wall and iron gate." },
-      ].map((item, index) => (
-        <div key={index} className="group p-6 rounded-2xl border border-gray-100 hover:border-orange-200 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 bg-white">
-          <div className="text-4xl mb-4">{item.icon}</div>
-          <h3 className="text-lg font-bold text-blue-900 mb-3 group-hover:text-orange-500 transition-colors">{item.title}</h3>
-          <p className="text-gray-500 text-sm leading-relaxed">{item.desc}</p>
+      {/* Why Choose Us */}
+      <section className="py-16 px-6 bg-white">
+        <div className="max-w-5xl mx-auto">
+          <p className="text-orange-500 font-medium text-sm uppercase tracking-widest text-center mb-3">
+            Why Choose Us
+          </p>
+          <h2 className="text-3xl font-bold text-blue-900 text-center mb-12">
+            What Makes Us Different
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {features.map((item, index) => (
+              <div
+                key={index}
+                className="group p-6 rounded-2xl border border-gray-100 hover:border-orange-200 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 bg-white"
+              >
+                <div className={`inline-flex p-3 rounded-xl mb-4 ${item.color}`}>
+                  {item.icon}
+                </div>
+                <h3 className="text-lg font-bold text-blue-900 mb-3 group-hover:text-orange-500 transition-colors">
+                  {item.title}
+                </h3>
+                <p className="text-gray-500 text-sm leading-relaxed">{item.desc}</p>
+              </div>
+            ))}
+          </div>
         </div>
-      ))}
-    </div>
-  </div>
-</section>
+      </section>
 
       {/* Notice Board */}
       <section className="bg-gray-50 py-16 px-6">
@@ -122,116 +252,113 @@ export default function Home() {
           </h2>
           <div className="flex flex-col gap-4">
             {notices.map((notice, index) => (
-              <div key={index} className="bg-white rounded-xl p-5 border border-gray-100 flex items-center justify-between gap-4">
+              <div
+                key={index}
+                className="bg-white rounded-xl p-5 border border-gray-100 flex items-center justify-between gap-4 hover:shadow-sm transition-shadow"
+              >
                 <div className="flex items-center gap-4">
                   <div className="text-center min-w-[60px]">
                     <p className="text-xs text-gray-400">{notice.date}</p>
                   </div>
-                  <div>
-                    <p className="text-blue-900 font-medium text-sm">{notice.title}</p>
-                  </div>
+                  <p className="text-blue-900 font-medium text-sm">{notice.title}</p>
                 </div>
-                <span className={`text-xs font-medium px-3 py-1 rounded-full whitespace-nowrap ${notice.tagColor}`}>
+                <span
+                  className={`text-xs font-medium px-3 py-1 rounded-full whitespace-nowrap ${notice.tagColor}`}
+                >
                   {notice.tag}
                 </span>
               </div>
             ))}
           </div>
-          <div className="text-center mt-8">
-            <p className="text-gray-500 text-sm">
-              More notices will appear here as they are published by school administration.
-            </p>
+        </div>
+      </section>
+
+      {/* Testimonials */}
+      <section className="py-16 px-6 bg-blue-50">
+        <div className="max-w-5xl mx-auto">
+          <p className="text-orange-500 font-medium text-sm uppercase tracking-widest text-center mb-3">
+            Parents Speak
+          </p>
+          <h2 className="text-3xl font-bold text-blue-900 text-center mb-12">
+            What Our Parents Say
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[
+              {
+                initials: "RS",
+                name: "Ramesh Singh",
+                role: "Parent — Class 12",
+                text: "My son studied here from Class 6 to 12. The teachers are very dedicated and always available for doubt clearing. Best school in our area.",
+              },
+              {
+                initials: "SP",
+                name: "Sunita Pandey",
+                role: "Parent — Class 10",
+                text: "Very affordable fees with excellent quality education. My daughter got District Rank in UP Board — all credit goes to TSIC teachers.",
+              },
+              {
+                initials: "MV",
+                name: "Mukesh Verma",
+                role: "Parent — Class 8",
+                text: "Smart classes aur computer lab ki wajah se mere bache ko modern education mil rahi hai. School ki building aur cleanliness bhi bahut achhi hai.",
+              },
+            ].map((t, i) => (
+              <div
+                key={i}
+                className="bg-white rounded-2xl p-6 shadow-sm border border-blue-100"
+              >
+                <div className="text-orange-400 text-3xl mb-4">"</div>
+                <p className="text-gray-600 text-sm leading-relaxed mb-6">{t.text}</p>
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-full bg-blue-900 text-white flex items-center justify-center font-bold text-sm">
+                    {t.initials}
+                  </div>
+                  <div>
+                    <p className="font-medium text-blue-900 text-sm">{t.name}</p>
+                    <p className="text-gray-400 text-xs">{t.role}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
-      
-{/* Testimonials */}
-<section className="py-16 px-6 bg-blue-50">
-  <div className="max-w-5xl mx-auto">
-    <p className="text-orange-500 font-medium text-sm uppercase tracking-widest text-center mb-3">
-      Parents Speak
-    </p>
-    <h2 className="text-3xl font-bold text-blue-900 text-center mb-12">
-      What Our Parents Say
-    </h2>
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
 
-      <div className="bg-white rounded-2xl p-6 shadow-sm border border-blue-100">
-        <div className="text-orange-400 text-3xl mb-4">"</div>
-        <p className="text-gray-600 text-sm leading-relaxed mb-6">
-          My son studied here from Class 6 to 12. The teachers are very dedicated and always available for doubt clearing. Best school in our area.
-        </p>
-        <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-full bg-blue-900 text-white flex items-center justify-center font-bold text-sm">RS</div>
-          <div>
-            <p className="font-medium text-blue-900 text-sm">Ramesh Singh</p>
-            <p className="text-gray-400 text-xs">Parent — Class 12</p>
+      {/* Campus Gallery */}
+      <section className="py-16 px-6 bg-white">
+        <div className="max-w-5xl mx-auto">
+          <p className="text-orange-500 font-medium text-sm uppercase tracking-widest text-center mb-3">
+            Our Campus
+          </p>
+          <h2 className="text-3xl font-bold text-blue-900 text-center mb-10">
+            Life at TSIC
+          </h2>
+          <div className="grid grid-cols-3 gap-2">
+            {[
+              { src: "/images/eight.jpg", alt: "School Building" },
+              { src: "/images/eleven.jpg", alt: "Campus" },
+              { src: "/images/seven.jpg", alt: "Students" },
+              { src: "/images/six.jpg", alt: "Students Group" },
+              { src: "/images/four.jpg", alt: "School Bus" },
+              { src: "/images/ten.jpg", alt: "School Grounds" },
+            ].map((photo, index) => (
+              <div
+                key={index}
+                className="rounded-xl overflow-hidden relative"
+                style={{ paddingBottom: "75%" }}
+              >
+                <Image
+                  src={photo.src}
+                  alt={photo.alt}
+                  fill
+                  className="object-cover hover:scale-105 transition-transform duration-300"
+                  sizes="(max-width: 768px) 33vw, 20vw"
+                />
+              </div>
+            ))}
           </div>
         </div>
-      </div>
-
-      <div className="bg-white rounded-2xl p-6 shadow-sm border border-blue-100">
-        <div className="text-orange-400 text-3xl mb-4">"</div>
-        <p className="text-gray-600 text-sm leading-relaxed mb-6">
-          Very affordable fees with excellent quality education. My daughter got District Rank in UP Board — all credit goes to TSIC teachers.
-        </p>
-        <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-full bg-blue-900 text-white flex items-center justify-center font-bold text-sm">SP</div>
-          <div>
-            <p className="font-medium text-blue-900 text-sm">Sunita Pandey</p>
-            <p className="text-gray-400 text-xs">Parent — Class 10</p>
-          </div>
-        </div>
-      </div>
-
-      <div className="bg-white rounded-2xl p-6 shadow-sm border border-blue-100">
-        <div className="text-orange-400 text-3xl mb-4">"</div>
-        <p className="text-gray-600 text-sm leading-relaxed mb-6">
-          Smart classes aur computer lab ki wajah se mere bache ko modern education mil rahi hai. School ki building aur cleanliness bhi bahut achhi hai.
-        </p>
-        <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-full bg-blue-900 text-white flex items-center justify-center font-bold text-sm">MV</div>
-          <div>
-            <p className="font-medium text-blue-900 text-sm">Mukesh Verma</p>
-            <p className="text-gray-400 text-xs">Parent — Class 8</p>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-{/* Campus Gallery */}
-<section className="py-16 px-6 bg-white">
-  <div className="max-w-5xl mx-auto">
-    <p className="text-orange-500 font-medium text-sm uppercase tracking-widest text-center mb-3">
-      Our Campus
-    </p>
-    <h2 className="text-3xl font-bold text-blue-900 text-center mb-10">
-      Life at TSIC
-    </h2>
-    <div className="grid grid-cols-3 gap-2">
-      {[
-        { src: "/images/eight.jpg", alt: "School Building" },
-        { src: "/images/eleven.jpg", alt: "Campus" },
-        { src: "/images/seven.jpg", alt: "Students" },
-        { src: "/images/six.jpg", alt: "Students Group" },
-        { src: "/images/four.jpg", alt: "School Bus" },
-        { src: "/images/nine.jpg", alt: "Staff Meeting" },
-      ].map((photo, index) => (
-        <div key={index} className="rounded-xl overflow-hidden relative" style={{paddingBottom: "75%"}}>
-          <img
-            src={photo.src}
-            alt={photo.alt}
-            style={{position: "absolute", top: 0, left: 0, width: "100%", height: "100%", objectFit: "cover"}}
-            className="hover:scale-105 transition-transform duration-300"
-          />
-        </div>
-      ))}
-    </div>
-  </div>
-</section>
+      </section>
 
       {/* CTA Banner */}
       <section className="bg-orange-500 py-12 px-6 text-center">
