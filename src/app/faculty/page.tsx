@@ -53,12 +53,60 @@ function HeroSlider() {
 
 export default function Faculty() {
   const teachers = [
-    { name: "Avneesh Kumar Tiwari", subject: "Biology",   role: "Lecturer",          experience: "9 years",  initial: "AK", color: "bg-green-100 text-green-800",  subjectColor: "bg-green-50 text-green-600" },
-    { name: "Ram Neval",            subject: "Physics",   role: "Lecturer",          experience: "8 years",  initial: "RN", color: "bg-blue-100 text-blue-800",    subjectColor: "bg-blue-50 text-blue-600" },
-    { name: "Anshul Singh",         subject: "Physics",   role: "Lecturer",          experience: "4 years",  initial: "AS", color: "bg-blue-100 text-blue-800",    subjectColor: "bg-blue-50 text-blue-600" },
-    { name: "Ganga Sagar Pandey",   subject: "Hindi",     role: "Lecturer",          experience: "11 years", initial: "GP", color: "bg-orange-100 text-orange-800", subjectColor: "bg-orange-50 text-orange-600" },
-    { name: "Rajesh Kumar",         subject: "Sociology", role: "Lecturer",          experience: "7 years",  initial: "RK", color: "bg-purple-100 text-purple-800", subjectColor: "bg-purple-50 text-purple-600" },
-    { name: "Kamini Singh",         subject: "Science",   role: "Assistant Teacher", experience: "High School", initial: "KS", color: "bg-pink-100 text-pink-800", subjectColor: "bg-pink-50 text-pink-600" },
+    {
+      name: "Rajesh Kumar",
+      subject: "Sociology",
+      role: "Principal & Lecturer",
+      experience: "11 years",
+      photo: "/images/rajesh.jpg",
+      subjectColor: "bg-purple-50 text-purple-600",
+      ringColor: "ring-purple-200",
+    },
+    {
+      name: "Avneesh Kumar Tiwari",
+      subject: "Biology",
+      role: "Lecturer",
+      experience: "9 years",
+      photo: "/images/avneesh.jpg",
+      subjectColor: "bg-green-50 text-green-600",
+      ringColor: "ring-green-200",
+    },
+    {
+      name: "Ram Neval",
+      subject: "Physics",
+      role: "Lecturer",
+      experience: "8 years",
+      photo: "/images/ramneval.jpg",
+      subjectColor: "bg-blue-50 text-blue-600",
+      ringColor: "ring-blue-200",
+    },
+    {
+      name: "Ganga Sagar Pandey",
+      subject: "Hindi",
+      role: "Lecturer",
+      experience: "11 years",
+      photo: "/images/gangasagar.jpg",
+      subjectColor: "bg-orange-50 text-orange-600",
+      ringColor: "ring-orange-200",
+    },
+    {
+      name: "Anshul Singh",
+      subject: "Physics",
+      role: "Lecturer",
+      experience: "4 years",
+      photo: "/images/anshul.jpg",
+      subjectColor: "bg-blue-50 text-blue-600",
+      ringColor: "ring-blue-200",
+    },
+    {
+      name: "Kamini Singh",
+      subject: "Science",
+      role: "Assistant Teacher",
+      experience: "High School",
+      photo: "/images/kamini.jpg",
+      subjectColor: "bg-pink-50 text-pink-600",
+      ringColor: "ring-pink-200",
+    },
   ];
 
   return (
@@ -80,7 +128,16 @@ export default function Faculty() {
           <p className="text-orange-500 font-medium text-sm uppercase tracking-widest text-center mb-3">नेतृत्व</p>
           <h2 className="text-3xl font-bold text-blue-900 text-center mb-10">Our Principal</h2>
           <div className="bg-gradient-to-br from-blue-900 to-blue-800 rounded-2xl p-8 flex flex-col md:flex-row items-center gap-8">
-            <div className="w-24 h-24 rounded-full bg-orange-500 text-white flex items-center justify-center font-bold text-3xl flex-shrink-0 border-4 border-orange-300">RK</div>
+            {/* Real photo for principal */}
+            <div className="w-28 h-28 rounded-full overflow-hidden flex-shrink-0 ring-4 ring-orange-400 relative">
+              <Image
+                src="/images/rajesh_kumar.jpg"
+                alt="Principal Rajesh Kumar"
+                fill
+                className="object-cover object-top"
+                sizes="112px"
+              />
+            </div>
             <div className="text-center md:text-left flex-1">
               <h3 className="text-2xl font-bold text-white mb-1">Rajesh Kumar</h3>
               <p className="text-orange-400 font-medium mb-4">Principal — Tejpal Smarak Inter College</p>
@@ -97,7 +154,7 @@ export default function Faculty() {
         </div>
       </section>
 
-      {/* Faculty Grid */}
+      {/* Faculty Grid — with real photos */}
       <section className="bg-gray-50 py-16 px-6">
         <div className="max-w-5xl mx-auto">
           <p className="text-orange-500 font-medium text-sm uppercase tracking-widest text-center mb-3">Teaching Staff</p>
@@ -106,14 +163,27 @@ export default function Faculty() {
             {teachers.map((teacher, i) => (
               <div key={i} className="bg-white rounded-2xl p-6 border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
                 <div className="flex items-center gap-4 mb-5">
-                  <div className={`w-14 h-14 rounded-full flex items-center justify-center font-bold text-lg flex-shrink-0 ${teacher.color}`}>{teacher.initial}</div>
+                  {/* Real photo — circular crop */}
+                  <div className={`w-16 h-16 rounded-full overflow-hidden flex-shrink-0 ring-2 ${teacher.ringColor} relative bg-gray-100`}>
+                    <Image
+                      src={teacher.photo}
+                      alt={teacher.name}
+                      fill
+                      className="object-cover object-top"
+                      sizes="64px"
+                    />
+                  </div>
                   <div className="flex-1">
-                    <h3 className="font-bold text-blue-900 text-sm group-hover:text-orange-500 transition-colors leading-tight">{teacher.name}</h3>
+                    <h3 className="font-bold text-blue-900 text-sm group-hover:text-orange-500 transition-colors leading-tight">
+                      {teacher.name}
+                    </h3>
                     <p className="text-gray-400 text-xs mt-0.5">{teacher.role}</p>
                   </div>
                 </div>
                 <div className="flex items-center justify-between">
-                  <span className={`text-xs font-medium px-3 py-1 rounded-full ${teacher.subjectColor}`}>{teacher.subject}</span>
+                  <span className={`text-xs font-medium px-3 py-1 rounded-full ${teacher.subjectColor}`}>
+                    {teacher.subject}
+                  </span>
                   <div className="flex items-center gap-1">
                     <span className="text-orange-400 text-xs">⭐</span>
                     <span className="text-gray-400 text-xs">{teacher.experience}</span>
@@ -132,7 +202,7 @@ export default function Faculty() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               { icon: "🎯", title: "Result Focused", desc: "Consistent UP Board toppers — District Rank 1 in Intermediate (2020)" },
-              { icon: "❤️", title: "Student First", desc: "Every teacher is available for doubt clearing beyond school hours" },
+              { icon: "❤️", title: "Student First",  desc: "Every teacher is available for doubt clearing beyond school hours" },
               { icon: "🌱", title: "Holistic Growth", desc: "Beyond academics — character building, discipline, and life skills" },
             ].map((item, i) => (
               <div key={i} className="text-center p-6 rounded-2xl border border-gray-100 hover:border-orange-200 hover:shadow-md transition-all duration-300">
