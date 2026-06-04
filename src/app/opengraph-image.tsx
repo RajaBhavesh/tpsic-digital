@@ -13,137 +13,105 @@ export default async function Image() {
           width: "1200px",
           height: "630px",
           display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center",
-          background: "linear-gradient(135deg, #0f172a 0%, #1e3a8a 60%, #0f172a 100%)",
+          background: "#0f172a",
           fontFamily: "sans-serif",
           position: "relative",
+          overflow: "hidden",
         }}
       >
-        {/* Subtle background pattern */}
+        {/* Left side — colored block */}
         <div
           style={{
-            position: "absolute",
-            inset: 0,
-            background:
-              "radial-gradient(circle at 20% 50%, rgba(249,115,22,0.15) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(255,255,255,0.05) 0%, transparent 40%)",
-          }}
-        />
-
-        {/* Top badge */}
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            background: "rgba(249,115,22,0.2)",
-            border: "1px solid rgba(249,115,22,0.4)",
-            borderRadius: "100px",
-            padding: "8px 24px",
-            marginBottom: "32px",
-          }}
-        >
-          <span style={{ color: "#fb923c", fontSize: "16px", fontWeight: 600, letterSpacing: "0.15em" }}>
-            UP BOARD AFFILIATED — EST. 2011
-          </span>
-        </div>
-
-        {/* School name */}
-        <div
-          style={{
+            width: "520px",
+            height: "630px",
+            background: "linear-gradient(160deg, #1e40af 0%, #1e3a8a 50%, #0f172a 100%)",
             display: "flex",
             flexDirection: "column",
-            alignItems: "center",
-            marginBottom: "24px",
+            justifyContent: "center",
+            padding: "60px 50px",
+            position: "relative",
           }}
         >
-          <span
-            style={{
-              fontSize: "64px",
-              fontWeight: 800,
-              color: "#ffffff",
-              textAlign: "center",
-              lineHeight: 1.1,
-              letterSpacing: "-0.02em",
-            }}
-          >
+          {/* Orange accent top */}
+          <div style={{ width: "60px", height: "5px", background: "#f97316", borderRadius: "4px", marginBottom: "32px" }} />
+
+          {/* School name */}
+          <div style={{ fontSize: "48px", fontWeight: 800, color: "#ffffff", lineHeight: 1.1, marginBottom: "16px" }}>
             Tejpal Smarak
-          </span>
-          <span
-            style={{
-              fontSize: "64px",
-              fontWeight: 800,
-              color: "#fb923c",
-              textAlign: "center",
-              lineHeight: 1.1,
-              letterSpacing: "-0.02em",
-            }}
-          >
+          </div>
+          <div style={{ fontSize: "48px", fontWeight: 800, color: "#f97316", lineHeight: 1.1, marginBottom: "28px" }}>
             Inter College
-          </span>
-        </div>
+          </div>
 
-        {/* Hindi tagline */}
-        <div
-          style={{
-            fontSize: "28px",
-            color: "#bfdbfe",
-            marginBottom: "40px",
-            textAlign: "center",
-          }}
-        >
-          शिक्षा से सशक्तिकरण — गाँव से उज्ज्वल भविष्य तक
-        </div>
+          {/* Tagline */}
+          <div style={{ fontSize: "18px", color: "#93c5fd", lineHeight: 1.5, marginBottom: "40px" }}>
+            Quality Education from Nursery to Class 12 in Missa Baragaon, Ayodhya
+          </div>
 
-        {/* Stats row */}
-        <div
-          style={{
-            display: "flex",
-            gap: "48px",
-            background: "rgba(255,255,255,0.07)",
-            border: "1px solid rgba(255,255,255,0.1)",
-            borderRadius: "16px",
-            padding: "20px 48px",
-          }}
-        >
-          {[
-            { value: "300+", label: "Students" },
-            { value: "Nursery–12", label: "All Classes" },
-            { value: "Ayodhya, UP", label: "Location" },
-          ].map((stat, i) => (
-            <div
-              key={i}
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-                gap: "4px",
-              }}
-            >
-              <span style={{ fontSize: "24px", fontWeight: 700, color: "#fb923c" }}>
-                {stat.value}
-              </span>
-              <span style={{ fontSize: "14px", color: "#93c5fd" }}>
-                {stat.label}
-              </span>
-            </div>
-          ))}
-        </div>
-
-        {/* Bottom URL */}
-        <div
-          style={{
-            position: "absolute",
-            bottom: "28px",
+          {/* UP Board badge */}
+          <div style={{
             display: "flex",
             alignItems: "center",
             gap: "8px",
+            background: "rgba(249,115,22,0.15)",
+            border: "1px solid rgba(249,115,22,0.4)",
+            borderRadius: "8px",
+            padding: "10px 18px",
+            width: "fit-content",
+          }}>
+            <div style={{ width: "8px", height: "8px", borderRadius: "50%", background: "#f97316" }} />
+            <span style={{ color: "#fb923c", fontSize: "14px", fontWeight: 600, letterSpacing: "0.1em" }}>
+              UP BOARD AFFILIATED — EST. 2011
+            </span>
+          </div>
+        </div>
+
+        {/* Right side — stats + info */}
+        <div
+          style={{
+            flex: 1,
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            padding: "60px 50px",
+            gap: "24px",
           }}
         >
-          <span style={{ color: "#64748b", fontSize: "16px" }}>
-            tpsic-website.vercel.app
-          </span>
+          {/* Stats */}
+          {[
+            { value: "300+", label: "Students Enrolled", color: "#f97316" },
+            { value: "Nursery — 12", label: "All Classes", color: "#60a5fa" },
+            { value: "7 Teachers", label: "Experienced Faculty", color: "#34d399" },
+            { value: "Ayodhya, UP", label: "Missa Baragaon", color: "#a78bfa" },
+          ].map((stat, i) => (
+            <div key={i} style={{ display: "flex", alignItems: "center", gap: "20px" }}>
+              <div style={{ width: "4px", height: "40px", background: stat.color, borderRadius: "4px", flexShrink: 0 }} />
+              <div style={{ display: "flex", flexDirection: "column" }}>
+                <span style={{ fontSize: "28px", fontWeight: 700, color: stat.color, lineHeight: 1 }}>{stat.value}</span>
+                <span style={{ fontSize: "14px", color: "#94a3b8", marginTop: "4px" }}>{stat.label}</span>
+              </div>
+            </div>
+          ))}
+
+          {/* Divider */}
+          <div style={{ height: "1px", background: "rgba(255,255,255,0.08)", marginTop: "8px" }} />
+
+          {/* Contact */}
+          <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
+            <span style={{ fontSize: "14px", color: "#64748b" }}>Admissions Open for 2026-27</span>
+            <span style={{ fontSize: "16px", color: "#e2e8f0", fontWeight: 500 }}>+91 99357 48696</span>
+          </div>
         </div>
+
+        {/* Bottom orange bar */}
+        <div style={{
+          position: "absolute",
+          bottom: 0,
+          left: 0,
+          right: 0,
+          height: "4px",
+          background: "linear-gradient(90deg, #f97316, #ea580c, #f97316)",
+        }} />
       </div>
     ),
     { ...size }
