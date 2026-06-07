@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect } from "react";
+import { supabase } from "@/lib/supabase";
 
 // Hero slider images
 const heroSlides = [
@@ -29,8 +30,6 @@ function HeroSlider() {
 
   return (
     <section className="relative h-[88vh] min-h-[520px] max-h-[800px] overflow-hidden">
-      
-      {/* Sab images stack karo — sirf current wali visible */}
       {heroSlides.map((slide, i) => (
         <div
           key={i}
@@ -49,7 +48,6 @@ function HeroSlider() {
         </div>
       ))}
 
-      {/* Content — same as before */}
       <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-6">
         <p className="text-orange-400 font-medium text-xs uppercase tracking-[0.2em] mb-4">
           UP Board Affiliated — Est. 2011
@@ -76,7 +74,6 @@ function HeroSlider() {
         </div>
       </div>
 
-      {/* Dots */}
       <div className="absolute bottom-6 left-0 right-0 z-20 flex justify-center gap-2">
         {heroSlides.map((_, i) => (
           <button key={i} onClick={() => goTo(i)} aria-label={`Slide ${i + 1}`}
@@ -87,7 +84,6 @@ function HeroSlider() {
         ))}
       </div>
 
-      {/* Arrows */}
       <button onClick={() => goTo((current - 1 + heroSlides.length) % heroSlides.length)}
         className="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-black/30 hover:bg-black/50 text-white rounded-full w-10 h-10 flex items-center justify-center text-xl transition-all"
         aria-label="Previous">‹</button>
@@ -98,33 +94,60 @@ function HeroSlider() {
   );
 }
 
+// Tag color mapping
+function getTagColor(tag: string): string {
+  const map: Record<string, string> = {
+    Exam:      "bg-red-100 text-red-700",
+    Admission: "bg-green-100 text-green-700",
+    Event:     "bg-blue-100 text-blue-700",
+    Result:    "bg-orange-100 text-orange-700",
+    Holiday:   "bg-purple-100 text-purple-700",
+    Notice:    "bg-gray-100 text-gray-700",
+  };
+  return map[tag] ?? "bg-gray-100 text-gray-700";
+}
+
+// Format date: 2026-06-07 → 07 Jun 2026
+function formatDate(dateStr: string): string {
+  const date = new Date(dateStr);
+  return date.toLocaleDateString("en-IN", {
+    day: "2-digit",
+    month: "short",
+    year: "numeric",
+  });
+}
+
+interface Notice {
+  id: number;
+  title: string;
+  tag: string;
+  date: string;
+  is_active: boolean;
+}
+
 export default function Home() {
-  const notices = [
-    {
-      date: "29 May 2026",
-      title: "Annual Examination Schedule 2026",
-      tag: "Exam",
-      tagColor: "bg-red-100 text-red-700",
-    },
-    {
-      date: "25 May 2026",
-      title: "Admissions Open for 2026-27 Academic Year",
-      tag: "Admission",
-      tagColor: "bg-green-100 text-green-700",
-    },
-    {
-      date: "20 May 2026",
-      title: "Parent-Teacher Meeting — 5th June 2026",
-      tag: "Event",
-      tagColor: "bg-blue-100 text-blue-700",
-    },
-    {
-      date: "15 May 2026",
-      title: "Result Declaration — Class 10 & 12",
-      tag: "Result",
-      tagColor: "bg-orange-100 text-orange-700",
-    },
-  ];
+  const [notices, setNotices] = useState<Notice[]>([]);
+  const [noticesLoading, setNoticesLoading] = useState(true);
+
+  // Fetch notices from Supabase
+  useEffect(() => {
+    async function fetchNotices() {
+      const { data, error } = await supabase
+        .from("notices")
+        .select("*")
+        .eq("is_active", true)
+        .order("date", { ascending: false })
+        .limit(5);
+
+      if (error) {
+        console.error("Error fetching notices:", error);
+      } else {
+        setNotices(data || []);
+      }
+      setNoticesLoading(false);
+    }
+    fetchNotices();
+  }, []);
 
   const features = [
     {
@@ -241,7 +264,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Notice Board */}
+      {/* Notice Board — Dynamic from Supabase */}
       <section className="bg-gray-50 py-16 px-6">
         <div className="max-w-4xl mx-auto">
           <p className="text-orange-500 font-medium text-sm uppercase tracking-widest text-center mb-3">
@@ -250,26 +273,43 @@ export default function Home() {
           <h2 className="text-3xl font-bold text-blue-900 text-center mb-10">
             Notice Board
           </h2>
-          <div className="flex flex-col gap-4">
-            {notices.map((notice, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-xl p-5 border border-gray-100 flex items-center justify-between gap-4 hover:shadow-sm transition-shadow"
-              >
-                <div className="flex items-center gap-4">
-                  <div className="text-center min-w-[60px]">
-                    <p className="text-xs text-gray-400">{notice.date}</p>
+
+          {noticesLoading ? (
+            // Loading skeleton
+            <div className="flex flex-col gap-4">
+              {[1, 2, 3].map((i) => (
+                <div key={i} className="bg-white rounded-xl p-5 border border-gray-100 animate-pulse">
+                  <div className="flex items-center gap-4">
+                    <div className="h-3 bg-gray-200 rounded w-20" />
+                    <div className="h-3 bg-gray-200 rounded w-64" />
                   </div>
-                  <p className="text-blue-900 font-medium text-sm">{notice.title}</p>
                 </div>
-                <span
-                  className={`text-xs font-medium px-3 py-1 rounded-full whitespace-nowrap ${notice.tagColor}`}
+              ))}
+            </div>
+          ) : notices.length === 0 ? (
+            <div className="text-center py-8">
+              <p className="text-gray-400 text-sm">No notices at the moment.</p>
+            </div>
+          ) : (
+            <div className="flex flex-col gap-4">
+              {notices.map((notice) => (
+                <div
+                  key={notice.id}
+                  className="bg-white rounded-xl p-5 border border-gray-100 flex items-center justify-between gap-4 hover:shadow-sm transition-shadow"
                 >
-                  {notice.tag}
-                </span>
-              </div>
-            ))}
-          </div>
+                  <div className="flex items-center gap-4">
+                    <div className="text-center min-w-[80px]">
+                      <p className="text-xs text-gray-400">{formatDate(notice.date)}</p>
+                    </div>
+                    <p className="text-blue-900 font-medium text-sm">{notice.title}</p>
+                  </div>
+                  <span className={`text-xs font-medium px-3 py-1 rounded-full whitespace-nowrap ${getTagColor(notice.tag)}`}>
+                    {notice.tag}
+                  </span>
+                </div>
+              ))}
+            </div>
+          )}
         </div>
       </section>
 
@@ -284,35 +324,15 @@ export default function Home() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
-              {
-                initials: "RS",
-                name: "Ramesh Singh",
-                role: "Parent — Class 12",
-                text: "My son studied here from Class 6 to 12. The teachers are very dedicated and always available for doubt clearing. Best school in our area.",
-              },
-              {
-                initials: "SP",
-                name: "Sunita Pandey",
-                role: "Parent — Class 10",
-                text: "Very affordable fees with excellent quality education. My daughter got District Rank in UP Board — all credit goes to TSIC teachers.",
-              },
-              {
-                initials: "MV",
-                name: "Mukesh Verma",
-                role: "Parent — Class 8",
-                text: "Smart classes aur computer lab ki wajah se mere bache ko modern education mil rahi hai. School ki building aur cleanliness bhi bahut achhi hai.",
-              },
+              { initials: "RS", name: "Ramesh Singh", role: "Parent — Class 12", text: "My son studied here from Class 6 to 12. The teachers are very dedicated and always available for doubt clearing. Best school in our area." },
+              { initials: "SP", name: "Sunita Pandey", role: "Parent — Class 10", text: "Very affordable fees with excellent quality education. My daughter got District Rank in UP Board — all credit goes to TSIC teachers." },
+              { initials: "MV", name: "Mukesh Verma", role: "Parent — Class 8", text: "Smart classes aur computer lab ki wajah se mere bache ko modern education mil rahi hai. School ki building aur cleanliness bhi bahut achhi hai." },
             ].map((t, i) => (
-              <div
-                key={i}
-                className="bg-white rounded-2xl p-6 shadow-sm border border-blue-100"
-              >
+              <div key={i} className="bg-white rounded-2xl p-6 shadow-sm border border-blue-100">
                 <div className="text-orange-400 text-3xl mb-4">"</div>
                 <p className="text-gray-600 text-sm leading-relaxed mb-6">{t.text}</p>
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-blue-900 text-white flex items-center justify-center font-bold text-sm">
-                    {t.initials}
-                  </div>
+                  <div className="w-10 h-10 rounded-full bg-blue-900 text-white flex items-center justify-center font-bold text-sm">{t.initials}</div>
                   <div>
                     <p className="font-medium text-blue-900 text-sm">{t.name}</p>
                     <p className="text-gray-400 text-xs">{t.role}</p>
@@ -335,18 +355,14 @@ export default function Home() {
           </h2>
           <div className="grid grid-cols-3 gap-2">
             {[
-              { src: "/images/eight.jpg", alt: "School Building" },
+              { src: "/images/eight.jpg",  alt: "School Building" },
               { src: "/images/eleven.jpg", alt: "Campus" },
-              { src: "/images/seven.jpg", alt: "Students" },
-              { src: "/images/six.jpg", alt: "Students Group" },
-              { src: "/images/four.jpg", alt: "School Bus" },
-              { src: "/images/ten.jpg", alt: "School Grounds" },
+              { src: "/images/seven.jpg",  alt: "Students" },
+              { src: "/images/six.jpg",    alt: "Students Group" },
+              { src: "/images/four.jpg",   alt: "School Bus" },
+              { src: "/images/ten.jpg",    alt: "School Grounds" },
             ].map((photo, index) => (
-              <div
-                key={index}
-                className="rounded-xl overflow-hidden relative"
-                style={{ paddingBottom: "75%" }}
-              >
+              <div key={index} className="rounded-xl overflow-hidden relative" style={{ paddingBottom: "75%" }}>
                 <Image
                   src={photo.src}
                   alt={photo.alt}
