@@ -35,6 +35,7 @@ function formatDate(dateStr: string): string {
 
 export default function AdminDashboard() {
   const router = useRouter();
+  const [authChecked, setAuthChecked] = useState(false); // auth check hua ya nahi
   const [notices, setNotices] = useState<Notice[]>([]);
   const [loading, setLoading] = useState(true);
   const [userEmail, setUserEmail] = useState("");
@@ -47,13 +48,14 @@ export default function AdminDashboard() {
   const [saving, setSaving] = useState(false);
   const [formError, setFormError] = useState("");
 
-  // Check auth
+  // Check auth — pehle auth check, tab content
   useEffect(() => {
     supabase.auth.getSession().then(({ data: { session } }) => {
       if (!session) {
-        router.push("/admin/login");
+        router.replace("/admin/login");
       } else {
         setUserEmail(session.user.email ?? "");
+        setAuthChecked(true);
         fetchNotices();
       }
     });
@@ -72,7 +74,7 @@ export default function AdminDashboard() {
 
   async function handleLogout() {
     await supabase.auth.signOut();
-    router.push("/admin/login");
+    router.replace("/admin/login");
   }
 
   async function handleAddNotice() {
@@ -113,6 +115,18 @@ export default function AdminDashboard() {
     fetchNotices();
   }
 
+  // Auth check hone tak — blank screen (koi flash nahi)
+  if (!authChecked) {
+    return (
+      <div className="min-h-screen bg-blue-900 flex items-center justify-center">
+        <div className="text-center">
+          <div className="w-12 h-12 rounded-full bg-orange-500 text-white flex items-center justify-center font-bold text-lg mx-auto mb-4">TS</div>
+          <p className="text-blue-300 text-sm">Loading...</p>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="min-h-screen bg-gray-50">
 
@@ -127,8 +141,7 @@ export default function AdminDashboard() {
             </div>
           </div>
           <div className="flex items-center gap-3">
-            <a href="/" target="_blank"
-              className="text-blue-300 hover:text-white text-xs transition-colors">
+            <a href="/" target="_blank" className="text-blue-300 hover:text-white text-xs transition-colors">
               View Site ↗
             </a>
             <button onClick={handleLogout}
@@ -151,8 +164,8 @@ export default function AdminDashboard() {
         <div className="grid grid-cols-3 gap-4 mb-8">
           {[
             { label: "Total Notices", value: notices.length },
-            { label: "Active", value: notices.filter(n => n.is_active).length },
-            { label: "Hidden", value: notices.filter(n => !n.is_active).length },
+            { label: "Active",        value: notices.filter(n => n.is_active).length },
+            { label: "Hidden",        value: notices.filter(n => !n.is_active).length },
           ].map((stat, i) => (
             <div key={i} className="bg-white rounded-xl p-5 border border-gray-100">
               <p className="text-2xl font-bold text-blue-900">{stat.value}</p>
@@ -184,7 +197,6 @@ export default function AdminDashboard() {
             )}
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
-              {/* Title */}
               <div className="md:col-span-3">
                 <label className="text-xs font-medium text-gray-600 block mb-1">Notice Title *</label>
                 <input
@@ -196,7 +208,6 @@ export default function AdminDashboard() {
                 />
               </div>
 
-              {/* Tag */}
               <div>
                 <label className="text-xs font-medium text-gray-600 block mb-1">Category</label>
                 <select
@@ -208,7 +219,6 @@ export default function AdminDashboard() {
                 </select>
               </div>
 
-              {/* Date */}
               <div>
                 <label className="text-xs font-medium text-gray-600 block mb-1">Date</label>
                 <input
@@ -219,7 +229,6 @@ export default function AdminDashboard() {
                 />
               </div>
 
-              {/* Save Button */}
               <div className="flex items-end">
                 <button
                   onClick={handleAddNotice}
@@ -260,7 +269,6 @@ export default function AdminDashboard() {
                     <span className={`text-xs font-medium px-2.5 py-1 rounded-full ${getTagColor(notice.tag)}`}>
                       {notice.tag}
                     </span>
-                    {/* Toggle */}
                     <button
                       onClick={() => toggleActive(notice.id, notice.is_active)}
                       className={`text-xs px-3 py-1.5 rounded-lg font-medium transition-colors ${
@@ -271,7 +279,6 @@ export default function AdminDashboard() {
                     >
                       {notice.is_active ? "Live" : "Hidden"}
                     </button>
-                    {/* Delete */}
                     <button
                       onClick={() => handleDelete(notice.id)}
                       className="text-xs px-3 py-1.5 rounded-lg font-medium bg-red-50 text-red-500 hover:bg-red-100 transition-colors"
