@@ -1,47 +1,20 @@
-import { createServerClient } from '@supabase/ssr'
 import { NextResponse, type NextRequest } from 'next/server'
 
 export async function middleware(request: NextRequest) {
-  let supabaseResponse = NextResponse.next({ request })
+  // Admin login page — always allow
+  if (request.nextUrl.pathname.startsWith('/admin/login')) {
+    return NextResponse.next()
+  }
 
-  const supabase = createServerClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY!,
-    {
-      cookies: {
-        getAll() {
-          return request.cookies.getAll()
-        },
-        setAll(cookiesToSet) {
-          cookiesToSet.forEach(({ name, value }) =>
-            request.cookies.set(name, value)
-          )
-          supabaseResponse = NextResponse.next({ request })
-          cookiesToSet.forEach(({ name, value, options }) =>
-            supabaseResponse.cookies.set(name, value, options)
-          )
-        },
-      },
+  // Admin pages — check cookie
+  if (request.nextUrl.pathname.startsWith('/admin')) {
+    const token = request.cookies.get('sb-pqasrjsxnplolzjwbjzo-auth-token')
+    if (!token) {
+      return NextResponse.redirect(new URL('/admin/login', request.url))
     }
-  )
-
-  const { data: { session } } = await supabase.auth.getSession()
-
-  // Agar /admin pe ja rahe hain (login page ke alawa) aur logged in nahi hain
-  if (
-    request.nextUrl.pathname.startsWith('/admin') &&
-    !request.nextUrl.pathname.startsWith('/admin/login') &&
-    !session
-  ) {
-    return NextResponse.redirect(new URL('/admin/login', request.url))
   }
 
-  // Agar already logged in hain aur login page pe ja rahe hain
-  if (request.nextUrl.pathname.startsWith('/admin/login') && session) {
-    return NextResponse.redirect(new URL('/admin', request.url))
-  }
-
-  return supabaseResponse
+  return NextResponse.next()
 }
 
 export const config = {
