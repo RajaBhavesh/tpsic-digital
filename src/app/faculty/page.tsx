@@ -56,7 +56,7 @@ export default function Faculty() {
     {
       name: "Rajesh Kumar",
       subject: "Sociology",
-      role: "Principal & Lecturer",
+      role: "Lecturer",
       experience: "11 years",
       photo: "/images/rajesh.jpg",
       subjectColor: "bg-purple-50 text-purple-600",
