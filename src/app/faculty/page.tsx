@@ -54,10 +54,10 @@ function HeroSlider() {
 export default function Faculty() {
   const teachers = [
     {
-      name: "Rajesh Kumar",
+      name: "Rajesh Kumar Pandey",
       subject: "Sociology",
       role: "Lecturer",
-      experience: "11 years",
+      experience: "8 years",
       photo: "/images/rajesh.jpg",
       subjectColor: "bg-purple-50 text-purple-600",
       ringColor: "ring-purple-200",
