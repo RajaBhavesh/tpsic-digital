@@ -6,6 +6,7 @@ import { useState } from "react";
 
 export default function Navbar() {
   const pathname = usePathname();
+if (pathname.startsWith("/admin")) return null;  // ← sirf yeh add karo
   const [menuOpen, setMenuOpen] = useState(false);
 
   const links = [
