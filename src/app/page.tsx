@@ -264,54 +264,70 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Notice Board — Dynamic from Supabase */}
-      <section className="bg-gray-50 py-16 px-6">
-        <div className="max-w-4xl mx-auto">
-          <p className="text-orange-500 font-medium text-sm uppercase tracking-widest text-center mb-3">
-            Latest Updates
-          </p>
-          <h2 className="text-3xl font-bold text-blue-900 text-center mb-10">
-            Notice Board
-          </h2>
+      {/* Notice Board — Improved */}
+<section className="bg-gray-50 py-16 px-6">
+  <div className="max-w-4xl mx-auto">
+    <p className="text-orange-500 font-medium text-sm uppercase tracking-widest text-center mb-3">
+      Latest Updates
+    </p>
+    <h2 className="text-3xl font-bold text-blue-900 text-center mb-10">
+      Notice Board
+    </h2>
 
-          {noticesLoading ? (
-            // Loading skeleton
-            <div className="flex flex-col gap-4">
-              {[1, 2, 3].map((i) => (
-                <div key={i} className="bg-white rounded-xl p-5 border border-gray-100 animate-pulse">
-                  <div className="flex items-center gap-4">
-                    <div className="h-3 bg-gray-200 rounded w-20" />
-                    <div className="h-3 bg-gray-200 rounded w-64" />
-                  </div>
-                </div>
-              ))}
+    {noticesLoading ? (
+      <div className="flex flex-col gap-4">
+        {[1, 2, 3].map((i) => (
+          <div key={i} className="bg-white rounded-xl p-5 border border-gray-100 animate-pulse h-20" />
+        ))}
+      </div>
+    ) : notices.length === 0 ? (
+      <div className="text-center py-8">
+        <p className="text-gray-400 text-sm">No notices at the moment.</p>
+      </div>
+    ) : (
+      <div className="flex flex-col gap-4">
+        {notices.map((notice) => {
+          const tagColors: Record<string, { bg: string; text: string; border: string }> = {
+            Exam:      { bg: "bg-red-50",     text: "text-red-600",    border: "border-red-400" },
+            Admission: { bg: "bg-green-50",   text: "text-green-600",  border: "border-green-400" },
+            Event:     { bg: "bg-blue-50",    text: "text-blue-600",   border: "border-blue-400" },
+            Result:    { bg: "bg-orange-50",  text: "text-orange-600", border: "border-orange-400" },
+            Holiday:   { bg: "bg-purple-50",  text: "text-purple-600", border: "border-purple-400" },
+            Notice:    { bg: "bg-gray-50",    text: "text-gray-600",   border: "border-gray-400" },
+          };
+          const colors = tagColors[notice.tag] ?? tagColors["Notice"];
+          const d = new Date(notice.date);
+          const day = d.toLocaleDateString("en-IN", { day: "2-digit" });
+          const month = d.toLocaleDateString("en-IN", { month: "short" });
+          const year = d.toLocaleDateString("en-IN", { year: "numeric" });
+
+          return (
+            <div key={notice.id}
+              className={`bg-white rounded-xl border-l-4 ${colors.border} shadow-sm hover:shadow-md transition-all duration-200 flex items-center gap-5 px-5 py-4`}>
+              
+              {/* Date Block */}
+              <div className={`${colors.bg} rounded-lg px-3 py-2 text-center min-w-[56px] flex-shrink-0`}>
+                <p className={`text-lg font-bold leading-none ${colors.text}`}>{day}</p>
+                <p className={`text-xs font-medium ${colors.text} mt-0.5`}>{month}</p>
+                <p className={`text-xs ${colors.text} opacity-70`}>{year}</p>
+              </div>
+
+              {/* Title */}
+              <p className="text-blue-900 font-medium text-sm flex-1 leading-snug">
+                {notice.title}
+              </p>
+
+              {/* Tag */}
+              <span className={`text-xs font-semibold px-3 py-1 rounded-full whitespace-nowrap ${colors.bg} ${colors.text} border ${colors.border} border-opacity-30`}>
+                {notice.tag}
+              </span>
             </div>
-          ) : notices.length === 0 ? (
-            <div className="text-center py-8">
-              <p className="text-gray-400 text-sm">No notices at the moment.</p>
-            </div>
-          ) : (
-            <div className="flex flex-col gap-4">
-              {notices.map((notice) => (
-                <div
-                  key={notice.id}
-                  className="bg-white rounded-xl p-5 border border-gray-100 flex items-center justify-between gap-4 hover:shadow-sm transition-shadow"
-                >
-                  <div className="flex items-center gap-4">
-                    <div className="text-center min-w-[80px]">
-                      <p className="text-xs text-gray-400">{formatDate(notice.date)}</p>
-                    </div>
-                    <p className="text-blue-900 font-medium text-sm">{notice.title}</p>
-                  </div>
-                  <span className={`text-xs font-medium px-3 py-1 rounded-full whitespace-nowrap ${getTagColor(notice.tag)}`}>
-                    {notice.tag}
-                  </span>
-                </div>
-              ))}
-            </div>
-          )}
-        </div>
-      </section>
+          );
+        })}
+      </div>
+    )}
+  </div>
+</section>
 
       {/* Testimonials */}
       <section className="py-16 px-6 bg-blue-50">
