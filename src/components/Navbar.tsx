@@ -1,12 +1,13 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 
 export default function Navbar() {
   const pathname = usePathname();
-if (pathname.startsWith("/admin")) return null;  // ← sirf yeh add karo
+  if (pathname.startsWith("/admin")) return null;
   const [menuOpen, setMenuOpen] = useState(false);
 
   const links = [
@@ -25,13 +26,19 @@ if (pathname.startsWith("/admin")) return null;  // ← sirf yeh add karo
       </div>
 
       {/* Main Navbar */}
-      <nav className="bg-white border-b border-gray-200 px-6 py-4">
+      <nav className="bg-white border-b border-gray-200 px-6 py-3">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
 
           {/* Left: Logo + School Name */}
           <Link href="/" className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-full bg-blue-900 text-white flex items-center justify-center font-bold text-sm">
-              TS
+            <div className="w-12 h-12 relative flex-shrink-0">
+              <Image
+                src="/logo.png"
+                alt="Tejpal Smarak Inter College Logo"
+                fill
+                className="object-contain"
+                sizes="48px"
+              />
             </div>
             <div>
               <p className="text-blue-900 font-bold text-base leading-tight">
@@ -62,7 +69,6 @@ if (pathname.startsWith("/admin")) return null;  // ← sirf yeh add karo
 
           {/* Right Side */}
           <div className="flex items-center gap-3">
-            {/* WhatsApp Button - desktop only */}
             <a
               href="https://wa.me/919935748696"
               target="_blank"
@@ -72,7 +78,6 @@ if (pathname.startsWith("/admin")) return null;  // ← sirf yeh add karo
               WhatsApp
             </a>
 
-            {/* Hamburger Button - mobile only */}
             <button
               onClick={() => setMenuOpen(!menuOpen)}
               className="md:hidden flex flex-col gap-1.5 p-2"
@@ -115,7 +120,6 @@ if (pathname.startsWith("/admin")) return null;  // ← sirf yeh add karo
             </div>
           </div>
         )}
-
       </nav>
     </header>
   );
