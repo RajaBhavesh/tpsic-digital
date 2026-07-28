@@ -47,6 +47,10 @@ export const metadata: Metadata = {
       "UP Board affiliated school offering quality education from Nursery to Class 12. Admissions open 2026-27.",
   },
   metadataBase: new URL("https://tpsic-website.vercel.app"),
+  icons: {
+    icon: "/favicon.ico",
+    apple: "/logo.png",
+  },
 };
 
 export default function RootLayout({
