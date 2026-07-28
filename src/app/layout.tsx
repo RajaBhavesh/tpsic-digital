@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Tejpal Smarak Inter College — Missa Baragaon, Ayodhya",
     description:
-      "UP Board affiliated school offering quality education from Nursery to Class 12. 300+ students. Admissions open for 2026-27.",
+      "UP Board affiliated school offering quality education from Nursery to Class 12. 400+ students. Admissions open for 2026-27.",
     url: "https://tpsic-website.vercel.app",
     siteName: "Tejpal Smarak Inter College",
     locale: "en_IN",

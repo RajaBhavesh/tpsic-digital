@@ -121,7 +121,7 @@ export default function AdminDashboard() {
       <div className="min-h-screen bg-blue-900 flex items-center justify-center">
         <div className="text-center">
           <div className="w-12 h-12 rounded-full bg-orange-500 text-white flex items-center justify-center font-bold text-lg mx-auto mb-4">TS</div>
-          <p className="text-blue-300 text-sm">Loading...</p>
+          <p className="text-blue-400 text-sm">Loading...</p>
         </div>
       </div>
     );
@@ -137,11 +137,11 @@ export default function AdminDashboard() {
             <div className="w-9 h-9 rounded-full bg-orange-500 flex items-center justify-center font-bold text-sm">TS</div>
             <div>
               <p className="font-bold text-sm leading-tight">TSIC Admin Panel</p>
-              <p className="text-blue-300 text-xs">{userEmail}</p>
+              <p className="text-blue-400 text-xs">{userEmail}</p>
             </div>
           </div>
           <div className="flex items-center gap-3">
-            <a href="/" target="_blank" className="text-blue-300 hover:text-white text-xs transition-colors">
+            <a href="/" target="_blank" className="text-blue-400 hover:text-white text-xs transition-colors">
               View Site ↗
             </a>
             <button onClick={handleLogout}
@@ -233,7 +233,7 @@ export default function AdminDashboard() {
                 <button
                   onClick={handleAddNotice}
                   disabled={saving || !newTitle.trim()}
-                  className="w-full bg-blue-900 hover:bg-blue-800 disabled:bg-gray-300 disabled:cursor-not-allowed text-white font-medium py-2.5 rounded-lg text-sm transition-colors"
+                  className="w-full bg-blue-900 hover:bg-blue-800 disabled:bg-gray-400 disabled:cursor-not-allowed text-white font-medium py-2.5 rounded-lg text-sm transition-colors"
                 >
                   {saving ? "Saving..." : "Save Notice"}
                 </button>

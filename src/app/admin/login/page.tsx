@@ -38,7 +38,7 @@ export default function AdminLogin() {
             TS
           </div>
           <h1 className="text-2xl font-bold text-white">Admin Panel</h1>
-          <p className="text-blue-300 text-sm mt-1">Tejpal Smarak Inter College</p>
+          <p className="text-blue-400 text-sm mt-1">Tejpal Smarak Inter College</p>
         </div>
 
         {/* Card */}
@@ -85,7 +85,7 @@ export default function AdminLogin() {
             <button
               onClick={handleLogin}
               disabled={loading || !email || !password}
-              className="w-full bg-blue-900 hover:bg-blue-800 disabled:bg-gray-300 disabled:cursor-not-allowed text-white font-semibold py-3 rounded-lg transition-colors mt-2"
+              className="w-full bg-blue-900 hover:bg-blue-800 disabled:bg-gray-400 disabled:cursor-not-allowed text-white font-semibold py-3 rounded-lg transition-colors mt-2"
             >
               {loading ? "Signing in..." : "Sign In"}
             </button>

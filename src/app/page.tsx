@@ -60,7 +60,7 @@ function HeroSlider() {
         </p>
         <p className="text-blue-200 text-sm md:text-base max-w-2xl mx-auto mb-10">
           Located in Missa Baragaon, Ayodhya — providing quality education to
-          300+ students. Dedicated to shaping a brighter future for every child.
+          400+ students. Dedicated to shaping a brighter future for every child.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link href="/admissions"
@@ -77,7 +77,7 @@ function HeroSlider() {
       <div className="absolute bottom-6 left-0 right-0 z-20 flex justify-center gap-2">
         {heroSlides.map((_, i) => (
           <button key={i} onClick={() => goTo(i)} aria-label={`Slide ${i + 1}`}
-            className={`rounded-full transition-all duration-300 ${
+            className={`rounded-full transition-all duration-400 ${
               i === current ? "bg-orange-400 w-6 h-2" : "bg-white/50 hover:bg-white/80 w-2 h-2"
             }`}
           />
@@ -159,7 +159,7 @@ export default function Home() {
       ),
       color: "bg-blue-50 text-blue-700",
       title: "Experienced Teachers",
-      desc: "7 dedicated faculty members with up to 11 years of teaching experience. Led by Principal Rajesh Kumar.",
+      desc: "10 dedicated faculty members with up to 11 years of teaching experience. Led by Principal Rajesh Kumar.",
     },
     {
       icon: (
@@ -188,8 +188,8 @@ export default function Home() {
         </svg>
       ),
       color: "bg-purple-50 text-purple-700",
-      title: "9 CCTV Cameras",
-      desc: "Complete campus surveillance with 9 CCTV cameras — ensuring safety and security of every student.",
+      title: "16 CCTV Cameras",
+      desc: "Complete campus surveillance with 16 CCTV cameras — ensuring safety and security of every student.",
     },
     {
       icon: (
@@ -222,7 +222,7 @@ export default function Home() {
       <section className="bg-blue-900 text-white py-8 px-6">
         <div className="max-w-4xl mx-auto grid grid-cols-3 gap-4 text-center">
           <div>
-            <p className="text-3xl font-bold text-orange-400">300+</p>
+            <p className="text-3xl font-bold text-orange-400">400+</p>
             <p className="text-blue-200 text-sm mt-1">Students</p>
           </div>
           <div>
@@ -249,7 +249,7 @@ export default function Home() {
             {features.map((item, index) => (
               <div
                 key={index}
-                className="group p-6 rounded-2xl border border-gray-100 hover:border-orange-200 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 bg-white"
+                className="group p-6 rounded-2xl border border-gray-100 hover:border-orange-200 hover:shadow-lg hover:-translate-y-1 transition-all duration-400 bg-white"
               >
                 <div className={`inline-flex p-3 rounded-xl mb-4 ${item.color}`}>
                   {item.icon}
@@ -383,7 +383,7 @@ export default function Home() {
                   src={photo.src}
                   alt={photo.alt}
                   fill
-                  className="object-cover hover:scale-105 transition-transform duration-300"
+                  className="object-cover hover:scale-105 transition-transform duration-400"
                   sizes="(max-width: 768px) 33vw, 20vw"
                 />
               </div>

@@ -79,9 +79,9 @@ export default async function Image() {
         >
           {/* Stats */}
           {[
-            { value: "300+", label: "Students Enrolled", color: "#f97316" },
+            { value: "400+", label: "Students Enrolled", color: "#f97316" },
             { value: "Nursery — 12", label: "All Classes", color: "#60a5fa" },
-            { value: "7 Teachers", label: "Experienced Faculty", color: "#34d399" },
+            { value: "10 Teachers", label: "Experienced Faculty", color: "#34d399" },
             { value: "Ayodhya, UP", label: "Missa Baragaon", color: "#a78bfa" },
           ].map((stat, i) => (
             <div key={i} style={{ display: "flex", alignItems: "center", gap: "20px" }}>

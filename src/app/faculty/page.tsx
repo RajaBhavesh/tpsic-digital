@@ -40,7 +40,7 @@ function HeroSlider() {
       <div className="absolute bottom-5 left-0 right-0 z-20 flex justify-center gap-2">
         {heroSlides.map((_, i) => (
           <button key={i} onClick={() => goTo(i)} aria-label={`Slide ${i + 1}`}
-            className={`rounded-full transition-all duration-300 ${i === current ? "bg-orange-400 w-6 h-2" : "bg-white/50 hover:bg-white/80 w-2 h-2"}`} />
+            className={`rounded-full transition-all duration-400 ${i === current ? "bg-orange-400 w-6 h-2" : "bg-white/50 hover:bg-white/80 w-2 h-2"}`} />
         ))}
       </div>
       <button onClick={() => goTo((current - 1 + heroSlides.length) % heroSlides.length)}
@@ -116,7 +116,7 @@ export default function Faculty() {
       {/* Stats */}
       <section className="bg-orange-500 py-6 px-6">
         <div className="max-w-4xl mx-auto grid grid-cols-3 gap-4 text-center">
-          <div><p className="text-2xl font-bold text-white">7</p><p className="text-orange-100 text-xs mt-1">Faculty Members</p></div>
+          <div><p className="text-2xl font-bold text-white">10</p><p className="text-orange-100 text-xs mt-1">Faculty Members</p></div>
           <div><p className="text-2xl font-bold text-white">11+</p><p className="text-orange-100 text-xs mt-1">Years Max Experience</p></div>
           <div><p className="text-2xl font-bold text-white">IIT + MBBS</p><p className="text-orange-100 text-xs mt-1">Alumni Produced</p></div>
         </div>
@@ -144,7 +144,7 @@ export default function Faculty() {
               <div className="flex flex-wrap gap-2 justify-center md:justify-start mb-5">
                 <span className="bg-white/10 text-blue-200 text-xs px-3 py-1 rounded-full">11 Years Experience</span>
                 <span className="bg-white/10 text-blue-200 text-xs px-3 py-1 rounded-full">Intermediate Level</span>
-                <span className="bg-orange-500/30 text-orange-300 text-xs px-3 py-1 rounded-full">UP Board Expert</span>
+                <span className="bg-orange-500/30 text-orange-400 text-xs px-3 py-1 rounded-full">UP Board Expert</span>
               </div>
               <blockquote className="text-blue-200 text-sm leading-relaxed italic border-l-2 border-orange-500 pl-4">
                 "Every child has unlimited potential. Our teachers don't just teach — they inspire, guide, and shape the future of our nation."
@@ -161,7 +161,7 @@ export default function Faculty() {
           <h2 className="text-3xl font-bold text-blue-900 text-center mb-12">Meet Our Teachers</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {teachers.map((teacher, i) => (
-              <div key={i} className="bg-white rounded-2xl p-6 border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
+              <div key={i} className="bg-white rounded-2xl p-6 border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-400 group">
                 <div className="flex items-center gap-4 mb-5">
                   {/* Real photo — circular crop */}
                   <div className={`w-16 h-16 rounded-full overflow-hidden flex-shrink-0 ring-2 ${teacher.ringColor} relative bg-gray-100`}>
@@ -205,7 +205,7 @@ export default function Faculty() {
               { icon: "❤️", title: "Student First",  desc: "Every teacher is available for doubt clearing beyond school hours" },
               { icon: "🌱", title: "Holistic Growth", desc: "Beyond academics — character building, discipline, and life skills" },
             ].map((item, i) => (
-              <div key={i} className="text-center p-6 rounded-2xl border border-gray-100 hover:border-orange-200 hover:shadow-md transition-all duration-300">
+              <div key={i} className="text-center p-6 rounded-2xl border border-gray-100 hover:border-orange-200 hover:shadow-md transition-all duration-400">
                 <div className="text-4xl mb-4">{item.icon}</div>
                 <h3 className="font-bold text-blue-900 mb-2">{item.title}</h3>
                 <p className="text-gray-500 text-sm leading-relaxed">{item.desc}</p>

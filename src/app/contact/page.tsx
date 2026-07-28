@@ -49,13 +49,13 @@ export default function Contact() {
       <section className="py-16 px-6 bg-white">
         <div className="max-w-5xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
-            <div className="bg-white rounded-2xl p-6 text-center border border-gray-100 hover:border-blue-200 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+            <div className="bg-white rounded-2xl p-6 text-center border border-gray-100 hover:border-blue-200 hover:shadow-lg hover:-translate-y-1 transition-all duration-400">
               <div className="w-14 h-14 rounded-full bg-blue-50 flex items-center justify-center text-2xl mx-auto mb-4">📍</div>
               <h3 className="font-bold text-blue-900 text-base mb-3">Address</h3>
               <p className="text-gray-500 text-sm leading-relaxed">Missa Baragaon, Ruduli<br />Ayodhya, UP — 224116</p>
             </div>
 
-            <div className="bg-white rounded-2xl p-6 text-center border border-gray-100 hover:border-blue-200 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+            <div className="bg-white rounded-2xl p-6 text-center border border-gray-100 hover:border-blue-200 hover:shadow-lg hover:-translate-y-1 transition-all duration-400">
               <div className="w-14 h-14 rounded-full bg-blue-50 flex items-center justify-center text-2xl mx-auto mb-4">📞</div>
               <h3 className="font-bold text-blue-900 text-base mb-3">Phone</h3>
               <p className="text-gray-400 text-xs mb-3">Mon — Sat, 8AM — 4PM</p>
@@ -63,7 +63,7 @@ export default function Contact() {
               <a href="tel:+919415529912" className="text-orange-500 hover:text-orange-600 font-medium text-sm block transition-colors mt-1">+91 94155 29912</a>
             </div>
 
-            <div className="bg-white rounded-2xl p-6 text-center border border-gray-100 hover:border-blue-200 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+            <div className="bg-white rounded-2xl p-6 text-center border border-gray-100 hover:border-blue-200 hover:shadow-lg hover:-translate-y-1 transition-all duration-400">
               <div className="w-14 h-14 rounded-full bg-blue-50 flex items-center justify-center text-2xl mx-auto mb-4">✉️</div>
               <h3 className="font-bold text-blue-900 text-base mb-3">Email</h3>
               <p className="text-gray-400 text-xs mb-3">Official correspondence</p>
@@ -72,7 +72,7 @@ export default function Contact() {
               </a>
             </div>
 
-            <div className="bg-white rounded-2xl p-6 text-center border border-gray-100 hover:border-green-200 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+            <div className="bg-white rounded-2xl p-6 text-center border border-gray-100 hover:border-green-200 hover:shadow-lg hover:-translate-y-1 transition-all duration-400">
               <div className="w-14 h-14 rounded-full bg-green-50 flex items-center justify-center text-2xl mx-auto mb-4">💬</div>
               <h3 className="font-bold text-blue-900 text-base mb-3">WhatsApp</h3>
               <p className="text-gray-400 text-xs mb-4">Fastest response<br />Reply within hours</p>
@@ -93,7 +93,7 @@ export default function Contact() {
             <div className="rounded-2xl overflow-hidden border border-gray-200 shadow-sm">
               <iframe
                 src="https://maps.google.com/maps?q=26.75828968491423,81.82408099081395&z=15&output=embed"
-                width="100%" height="300" style={{ border: 0 }}
+                width="100%" height="400" style={{ border: 0 }}
                 allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade"
               />
             </div>

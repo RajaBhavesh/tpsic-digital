@@ -89,7 +89,7 @@ function HeroSlider({ slides, title, subtitle, description, children }: {
               key={i}
               onClick={() => goTo(i)}
               aria-label={`Slide ${i + 1}`}
-              className={`rounded-full transition-all duration-300 ${
+              className={`rounded-full transition-all duration-400 ${
                 i === current
                   ? "bg-orange-400 w-6 h-2"
                   : "bg-white/50 hover:bg-white/80 w-2 h-2"
@@ -160,8 +160,8 @@ export default function About() {
             {[
               { value: "2011", label: "High School Est." },
               { value: "2016", label: "Intermediate Est." },
-              { value: "300+", label: "Students Enrolled" },
-              { value: "9",    label: "Classrooms" },
+              { value: "400+", label: "Students Enrolled" },
+              { value: "20",    label: "Classrooms" },
             ].map((item, i) => (
               <div key={i} className="bg-white rounded-xl p-6 text-center border border-gray-100">
                 <p className="text-3xl font-bold text-orange-500 mb-2">{item.value}</p>
@@ -182,7 +182,7 @@ export default function About() {
               "At Tejpal Smarak Inter College, we believe every child has unlimited potential. Our teachers don't just teach — they inspire, guide, and shape the future of our nation."
             </p>
             <p className="text-orange-400 font-medium">Rajesh Kumar</p>
-            <p className="text-blue-300 text-sm">Principal, TSIC — 11 years experience</p>
+            <p className="text-blue-400 text-sm">Principal, TSIC — 11 years experience</p>
           </div>
         </div>
       </section>
@@ -198,11 +198,11 @@ export default function About() {
               { icon: <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" /></svg>, label: "Computer Lab", color: "bg-purple-50 text-purple-700" },
               { icon: <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /></svg>, label: "Library", color: "bg-yellow-50 text-yellow-700" },
               { icon: <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064" /></svg>, label: "Sports Ground", color: "bg-orange-50 text-orange-600" },
-              { icon: <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.069A1 1 0 0121 8.82v6.36a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>, label: "9 CCTV Cameras", color: "bg-red-50 text-red-600" },
+              { icon: <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.069A1 1 0 0121 8.82v6.36a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>, label: "16 CCTV Cameras", color: "bg-red-50 text-red-600" },
               { icon: <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>, label: "Generator Backup", color: "bg-teal-50 text-teal-700" },
               { icon: <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.14 0M1.394 9.393c5.857-5.857 15.355-5.857 21.213 0" /></svg>, label: "WiFi Campus", color: "bg-indigo-50 text-indigo-700" },
             ].map((item, i) => (
-              <div key={i} className="bg-white rounded-xl p-4 text-center border border-gray-100 hover:shadow-md hover:-translate-y-1 transition-all duration-300">
+              <div key={i} className="bg-white rounded-xl p-4 text-center border border-gray-100 hover:shadow-md hover:-translate-y-1 transition-all duration-400">
                 <div className={`inline-flex p-3 rounded-xl mb-3 ${item.color}`}>{item.icon}</div>
                 <p className="text-gray-700 text-sm font-medium">{item.label}</p>
               </div>
@@ -225,7 +225,7 @@ export default function About() {
               { src: "/images/foutenn.jpg", alt: "Office" },
             ].map((photo, i) => (
               <div key={i} className="rounded-xl overflow-hidden relative" style={{ paddingBottom: "75%" }}>
-                <Image src={photo.src} alt={photo.alt} fill className="object-cover hover:scale-105 transition-transform duration-300" sizes="33vw" />
+                <Image src={photo.src} alt={photo.alt} fill className="object-cover hover:scale-105 transition-transform duration-400" sizes="33vw" />
               </div>
             ))}
           </div>
@@ -237,7 +237,7 @@ export default function About() {
         <div className="max-w-4xl mx-auto text-center">
           <p className="text-orange-400 font-medium text-sm uppercase tracking-widest mb-4">Our Pride</p>
           <h2 className="text-3xl font-bold text-white mb-3">Hall of Fame 🏆</h2>
-          <p className="text-blue-300 text-sm mb-12 max-w-xl mx-auto">
+          <p className="text-blue-400 text-sm mb-12 max-w-xl mx-auto">
             From Missa Baragaon to IITs and Medical colleges — our students prove that greatness has no address.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
@@ -252,7 +252,7 @@ export default function About() {
                   <div className={`w-14 h-14 rounded-full flex items-center justify-center font-bold text-white text-lg bg-gradient-to-br ${person.gradient}`}>{person.initials}</div>
                   <div className="flex-1">
                     <p className="text-white font-bold text-base">{person.name}</p>
-                    <p className="text-blue-300 text-xs mt-0.5">{person.sub}</p>
+                    <p className="text-blue-400 text-xs mt-0.5">{person.sub}</p>
                   </div>
                   <div className="flex flex-col gap-1">
                     {person.badges.map((b, j) => <span key={j} className={`${person.badgeColor} text-white text-xs px-3 py-1 rounded-full text-center`}>{b}</span>)}

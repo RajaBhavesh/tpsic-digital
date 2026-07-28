@@ -51,7 +51,7 @@ function HeroSlider() {
       <div className="absolute bottom-5 left-0 right-0 z-20 flex justify-center gap-2">
         {heroSlides.map((_, i) => (
           <button key={i} onClick={() => goTo(i)} aria-label={`Slide ${i + 1}`}
-            className={`rounded-full transition-all duration-300 ${i === current ? "bg-orange-400 w-6 h-2" : "bg-white/50 hover:bg-white/80 w-2 h-2"}`} />
+            className={`rounded-full transition-all duration-400 ${i === current ? "bg-orange-400 w-6 h-2" : "bg-white/50 hover:bg-white/80 w-2 h-2"}`} />
         ))}
       </div>
       <button onClick={() => goTo((current - 1 + heroSlides.length) % heroSlides.length)}
@@ -70,7 +70,7 @@ export default function Admissions() {
       {/* Quick Stats */}
       <section className="bg-orange-500 py-6 px-6">
         <div className="max-w-4xl mx-auto grid grid-cols-3 gap-4 text-center">
-          <div><p className="text-2xl font-bold text-white">300+</p><p className="text-orange-100 text-xs mt-1">Students</p></div>
+          <div><p className="text-2xl font-bold text-white">400+</p><p className="text-orange-100 text-xs mt-1">Students</p></div>
           <div><p className="text-2xl font-bold text-white">Nursery—12</p><p className="text-orange-100 text-xs mt-1">All Classes</p></div>
           <div><p className="text-2xl font-bold text-white">UP Board</p><p className="text-orange-100 text-xs mt-1">Affiliated</p></div>
         </div>
@@ -89,7 +89,7 @@ export default function Admissions() {
               { step: "4", title: "Confirmation", desc: "Get confirmed and pay fees", icon: "✅" },
             ].map((item) => (
               <div key={item.step} className="text-center group">
-                <div className="w-14 h-14 rounded-full bg-blue-900 group-hover:bg-orange-500 text-white flex items-center justify-center text-2xl mx-auto mb-3 transition-colors duration-300">
+                <div className="w-14 h-14 rounded-full bg-blue-900 group-hover:bg-orange-500 text-white flex items-center justify-center text-2xl mx-auto mb-3 transition-colors duration-400">
                   {item.icon}
                 </div>
                 <p className="text-xs font-bold text-orange-500 mb-1">Step {item.step}</p>
@@ -113,7 +113,7 @@ export default function Admissions() {
               { class: "Class 6 — 10", level: "Secondary", icon: "🎓" },
               { class: "Class 11 — 12", level: "Intermediate", icon: "🏆" },
             ].map((item, i) => (
-              <div key={i} className="rounded-2xl p-6 text-center border bg-white border-gray-100 transition-all hover:shadow-lg hover:-translate-y-1 duration-300">
+              <div key={i} className="rounded-2xl p-6 text-center border bg-white border-gray-100 transition-all hover:shadow-lg hover:-translate-y-1 duration-400">
                 <div className="text-3xl mb-3">{item.icon}</div>
                 <p className="text-base font-bold mb-1 text-blue-900">{item.class}</p>
                 <p className="text-xs mb-3 text-gray-500">{item.level}</p>

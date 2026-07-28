@@ -27,13 +27,13 @@ export default function Footer() {
               </div>
               <div>
                 <p className="font-bold text-white text-sm leading-tight">Tejpal Smarak Inter College</p>
-                <p className="text-blue-300 text-xs mt-0.5">Missa Baragaon, Ayodhya</p>
+                <p className="text-blue-400 text-xs mt-0.5">Missa Baragaon, Ayodhya</p>
               </div>
             </div>
             <div className="flex flex-col gap-1">
-              <p className="text-blue-300 text-xs">📋 Code: 621282 | U-DISE: 09470911607</p>
-              <p className="text-blue-300 text-xs">👨‍🏫 Principal: Rajesh Kumar</p>
-              <p className="text-blue-300 text-xs">📅 Est. 2011 (HS) | 2016 (Inter)</p>
+              <p className="text-blue-400 text-xs">📋 Code: 621282 | U-DISE: 09470911607</p>
+              <p className="text-blue-400 text-xs">👨‍🏫 Principal: Rajesh Kumar</p>
+              <p className="text-blue-400 text-xs">📅 Est. 2011 (HS) | 2016 (Inter)</p>
             </div>
           </div>
 
@@ -48,7 +48,7 @@ export default function Footer() {
                 { href: "/faculty", label: "Faculty" },
                 { href: "/contact", label: "Contact" },
               ].map((link) => (
-                <Link key={link.href} href={link.href} className="text-blue-300 hover:text-orange-400 text-xs transition-colors">
+                <Link key={link.href} href={link.href} className="text-blue-400 hover:text-orange-400 text-xs transition-colors">
                   › {link.label}
                 </Link>
               ))}
@@ -60,7 +60,7 @@ export default function Footer() {
             <p className="font-bold text-white text-xs uppercase tracking-wider mb-3">Classes</p>
             <div className="flex flex-col gap-2">
               {["Nursery — KG", "Class 1 — 5", "Class 6 — 8", "Class 9 — 10", "Class 11 — 12"].map((item) => (
-                <Link key={item} href="/admissions" className="text-blue-300 hover:text-orange-400 text-xs transition-colors">
+                <Link key={item} href="/admissions" className="text-blue-400 hover:text-orange-400 text-xs transition-colors">
                   › {item}
                 </Link>
               ))}
