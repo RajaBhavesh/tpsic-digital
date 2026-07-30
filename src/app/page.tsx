@@ -756,7 +756,7 @@ export default function Home() {
               Campus Facilities & Excellence
             </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-4 tracking-tight">
-              Adequate & Advanced Features Built for All-Round Growth
+              Modern Facilities Designed for All-Round Growth
             </h2>
           </div>
 
