@@ -206,11 +206,11 @@ const FEATURES_DATA: FeatureItem[] = [
   },
   {
     id: "07",
-    tag: "Career Guidance",
-    title: "Foundation & Career Counseling",
-    description: "Special coaching modules and aptitude testing for medical, engineering, and civil service pathways.",
-    badge: "Future Ready",
-    icon: "🎯",
+    tag: "NCERT Curriculum",
+    title: "NCERT-Aligned Modern Syllabus",
+    description: "UP Board now follows NCERT curriculum, ensuring stronger conceptual learning and national-level exam readiness.",
+    badge: "NCERT Based",
+    icon: "📘",
   },
   {
     id: "08",
