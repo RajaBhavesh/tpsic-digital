@@ -136,7 +136,7 @@ export default function AdminDashboard() {
           <div className="flex items-center gap-3">
             <div className="w-9 h-9 rounded-full bg-orange-500 flex items-center justify-center font-bold text-sm">TS</div>
             <div>
-              <p className="font-bold text-sm leading-tight">TSIC Admin Panel</p>
+              <p className="font-bold text-sm leading-tight">TPSIC Admin Panel</p>
               <p className="text-blue-400 text-xs">{userEmail}</p>
             </div>
           </div>

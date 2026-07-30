@@ -97,7 +97,7 @@ const CAMPUS_PHOTOS = [
 const ALUMNI_DATA: AlumniItem[] = [
   {
     name: "Raja Bhavesh",
-    role: "TSIC Alumni",
+    role: "TPSIC Alumni",
     badge: "JEE Advanced",
     college: "IIT BHU",
     image: "/images/rajabhavesh1.jpg",
@@ -109,18 +109,18 @@ const ALUMNI_DATA: AlumniItem[] = [
   },
   {
     name: "Renu Kumari",
-    role: "TSIC Alumni",
+    role: "TPSIC Alumni",
     badge: "NEET Qualified",
     college: "MBBS",
     image: "/images/renu.jpg",
     highlights: [
       { label: "NEET Qualified", detail: "MBBS - RDASMC Ayodhya (2019)" },
-      { label: "Medical Doctor", detail: "From TSIC to MBBS — a proud journey" },
+      { label: "Medical Doctor", detail: "From TPSIC to MBBS — a proud journey" },
     ],
   },
   {
     name: "Agrima Singh",
-    role: "TSIC Alumni",
+    role: "TPSIC Alumni",
     badge: "NEET 2024",
     college: "MBBS",
     image: "/images/agrima.jpg",
@@ -325,7 +325,7 @@ export default function About() {
               </div>
               <h3 className="text-lg font-bold text-slate-900">Rajesh Kumar</h3>
               <p className="text-xs font-bold text-amber-700 uppercase tracking-wider mt-0.5">
-                Principal, TSIC — 11 Years Experience
+                Principal, TPSIC — 11 Years Experience
               </p>
             </div>
 

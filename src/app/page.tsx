@@ -111,7 +111,7 @@ const FALLBACK_NOTICES: Notice[] = [
 const HERO_SLIDES = [
   {
     src: "/images/one.jpg",
-    subtitle: "Welcome to TSIC Ayodhya",
+    subtitle: "Welcome to TPSIC Ayodhya",
     title: "Empowering Minds, Shaping Tomorrow",
     desc: "Providing holistic education with modern interactive classrooms, practical science labs, and strong moral values.",
   },
@@ -429,7 +429,7 @@ const FAQ_DATA: FAQItem[] = [
       "Admissions can be submitted directly at the school administrative counter or through our quick online inquiry form on this website.",
   },
   {
-    question: "Which board is TSIC affiliated with?",
+    question: "Which board is TPSIC affiliated with?",
     answer:
       "The college is affiliated with UP Board (UPMSP, Prayagraj), providing quality education from Primary to Senior Secondary classes.",
   },
@@ -725,7 +725,7 @@ export default function Home() {
             </div>
             <h3 className="text-lg font-bold text-slate-900">Rajesh Kumar</h3>
             <p className="text-xs font-bold text-amber-700 uppercase tracking-wider mt-0.5">
-              Principal, TSIC
+              Principal, TPSIC
             </p>
           </div>
 
@@ -973,7 +973,7 @@ export default function Home() {
             <span className="text-amber-800 font-bold text-xs uppercase tracking-widest bg-amber-100/70 border border-amber-200/80 px-4 py-1.5 rounded-full">
               Gallery Slider
             </span>
-            <h2 className="text-3xl font-extrabold text-slate-900 mt-4">Life at TSIC Campus</h2>
+            <h2 className="text-3xl font-extrabold text-slate-900 mt-4">Life at TPSIC Campus</h2>
           </div>
 
           <div className="flex items-center gap-2">

@@ -19,7 +19,7 @@ export default function Footer() {
               <div className="w-12 h-12 relative flex-shrink-0">
                 <Image
                   src="/logo.png"
-                  alt="TSIC Logo"
+                  alt="TPSIC Logo"
                   fill
                   className="object-contain"
                   sizes="48px"

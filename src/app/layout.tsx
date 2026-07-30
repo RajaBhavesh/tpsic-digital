@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     "Tejpal Smarak Inter College, Missa Baragaon, Ayodhya, Uttar Pradesh. UP Board affiliated school offering quality education from Nursery to Class 12. Admissions open for 2026-27.",
   keywords: [
     "Tejpal Smarak Inter College",
-    "TSIC Ayodhya",
+    "TPSIC Ayodhya",
     "UP Board school Ayodhya",
     "school Missa Baragaon",
     "admission Ayodhya school",

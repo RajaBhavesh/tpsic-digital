@@ -52,7 +52,7 @@ const DOCUMENTS_REQUIRED = [
   { doc: "Caste Certificate (if applicable)", icon: "📜", desc: "For scholarship and category records" },
 ];
 
-const WHY_JOIN_TSIC = [
+const WHY_JOIN_TPSIC = [
   { icon: "🏆", text: "District Toppers & Academic Record" },
   { icon: "📱", text: "5 Smart Classes with Digital Learning" },
   { icon: "🔬", text: "Fully Equipped Science & Computer Labs" },
@@ -311,21 +311,21 @@ export default function Admissions() {
         </div>
       </section>
 
-      {/* ================= WHY JOIN TSIC ================= */}
+      {/* ================= WHY JOIN TPSIC ================= */}
       <section className="py-20 sm:py-28 bg-slate-950 text-white relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <span className="inline-block px-4 py-1.5 rounded-full bg-white/20 border border-white/30 text-amber-300 text-xs font-semibold uppercase tracking-widest mb-4">
               Excellence Guaranteed
             </span>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-white mb-4 tracking-tight">Why Join TSIC?</h2>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-white mb-4 tracking-tight">Why Join TPSIC?</h2>
             <p className="text-slate-400 text-sm sm:text-base font-light">
               We provide a disciplined, safe, and modern academic environment to foster future leaders.
             </p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {WHY_JOIN_TSIC.map((item, idx) => (
+            {WHY_JOIN_TPSIC.map((item, idx) => (
               <div
                 key={idx}
                 className="rounded-3xl p-8 bg-slate-900/60 backdrop-blur-xl border border-white/10 hover:border-amber-500/60 transition-all shadow-xl flex flex-col items-center text-center group"

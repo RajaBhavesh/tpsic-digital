@@ -13,7 +13,7 @@ const HERO_SLIDES = [
     src: "/images/four.jpg",
     subtitle: "हमारे शिक्षक",
     title: "Our Dedicated Faculty",
-    desc: "Experienced, passionate, and committed educators shaping the future and character of every student at TSIC.",
+    desc: "Experienced, passionate, and committed educators shaping the future and character of every student at TPSIC.",
   },
   {
     src: "/images/nine.jpg",
