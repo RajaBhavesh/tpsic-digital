@@ -96,29 +96,6 @@ const CAMPUS_PHOTOS = [
 
 const ALUMNI_DATA: AlumniItem[] = [
   {
-    name: "Raja Bhavesh",
-    role: "TPSIC Alumni",
-    badge: "JEE Advanced",
-    college: "IIT BHU",
-    image: "/images/rajabhavesh1.jpg",
-    highlights: [
-      { label: "District Rank 3", detail: "High School — Ayodhya (2018)" },
-      { label: "District Rank 1 🥇", detail: "Intermediate — Ayodhya (2020)" },
-      { label: "JEE Qualified", detail: "Mains & Advanced — IIT BHU (2021)" },
-    ],
-  },
-  {
-    name: "Renu Kumari",
-    role: "TPSIC Alumni",
-    badge: "NEET Qualified",
-    college: "MBBS",
-    image: "/images/renu.jpg",
-    highlights: [
-      { label: "NEET Qualified", detail: "MBBS - RDASMC Ayodhya (2019)" },
-      { label: "Medical Doctor", detail: "From TPSIC to MBBS — a proud journey" },
-    ],
-  },
-  {
     name: "Agrima Singh",
     role: "TPSIC Alumni",
     badge: "NEET 2024",
@@ -129,6 +106,30 @@ const ALUMNI_DATA: AlumniItem[] = [
       { label: "NEET Qualified", detail: "MBBS - MVASMC Basti (2024)" },
     ],
   },
+  {
+    name: "Raja Bhavesh",
+    role: "TPSIC Alumni",
+    badge: "JEE 2021",
+    college: "IIT BHU",
+    image: "/images/rajabhavesh1.jpg",
+    highlights: [
+      { label: "District Rank 3", detail: "High School — Ayodhya (2018)" },
+      { label: "District Rank 1", detail: "Intermediate — Ayodhya (2020)" },
+      { label: "JEE Qualified", detail: "Mains & Advanced — IIT BHU (2021)" },
+    ],
+  },
+  {
+    name: "Renu Kumari",
+    role: "TPSIC Alumni",
+    badge: "NEET 2019",
+    college: "MBBS",
+    image: "/images/renu.jpg",
+    highlights: [
+      { label: "NEET Qualified", detail: "MBBS - RDASMC Ayodhya (2019)" },
+      { label: "Medical Doctor", detail: "From TPSIC to MBBS — a proud journey" },
+    ],
+  },
+  
 ];
 
 // ==========================================
