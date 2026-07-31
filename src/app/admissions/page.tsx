@@ -89,15 +89,16 @@ export default function Admissions() {
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900 font-sans antialiased selection:bg-amber-500 selection:text-white">
 
-      {/* ================= HERO SLIDER SECTION ================= */}
+      {/* ================= HERO SLIDER SECTION (Fixed: synced crossfade, badge above title) ================= */}
       <section className="relative pt-40 sm:pt-48 pb-28 sm:pb-36 bg-slate-950 text-white flex flex-col justify-center overflow-hidden">
-        <AnimatePresence mode="wait">
+        {/* Background image crossfade — no "wait" mode so old and new overlap smoothly */}
+        <AnimatePresence>
           <motion.div
             key={currentSlide}
             initial={{ opacity: 0, scale: 1.02 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.7 }}
+            transition={{ duration: 0.9, ease: "easeInOut" }}
             className="absolute inset-0 z-0"
           >
             <Image
@@ -112,32 +113,45 @@ export default function Admissions() {
         </AnimatePresence>
 
         <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center">
-          <motion.span
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/20 backdrop-blur-md border border-white/30 text-amber-300 text-xs font-extrabold uppercase tracking-widest mb-6 shadow-sm"
-          >
-            <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
-            {HERO_SLIDES[currentSlide].subtitle}
-          </motion.span>
 
-          <motion.h1
-            key={`title-${currentSlide}`}
-            initial={{ opacity: 0, y: 15 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4 }}
-            className="text-3xl sm:text-6xl font-black tracking-tight leading-[1.12] mb-4 text-white drop-shadow-md"
-          >
-            {HERO_SLIDES[currentSlide].title}
-          </motion.h1>
+          {/* Badge — synced with image, sits above the title */}
+          <AnimatePresence mode="wait">
+            <motion.span
+              key={currentSlide}
+              initial={{ opacity: 0, y: -8 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 8 }}
+              transition={{ duration: 0.5, ease: "easeInOut" }}
+              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/20 backdrop-blur-md border border-white/30 text-amber-300 text-xs font-extrabold uppercase tracking-widest mb-6 shadow-sm"
+            >
+              <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
+              {HERO_SLIDES[currentSlide].subtitle}
+            </motion.span>
+          </AnimatePresence>
 
-          <p className="text-base sm:text-xl text-amber-200/95 font-semibold mb-3 tracking-wide" lang="hi">
-            प्रवेश सत्र 2026-27 — नर्सरी से कक्षा 12 तक
-          </p>
+          {/* Title + tagline + desc grouped together, synced with image */}
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={currentSlide}
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -8 }}
+              transition={{ duration: 0.5, ease: "easeInOut" }}
+              className="flex flex-col items-center"
+            >
+              <h1 className="text-3xl sm:text-6xl font-black tracking-tight leading-[1.12] mb-4 text-white drop-shadow-md">
+                {HERO_SLIDES[currentSlide].title}
+              </h1>
 
-          <p className="text-slate-200 text-sm sm:text-base max-w-2xl mb-8 leading-relaxed font-normal drop-shadow">
-            {HERO_SLIDES[currentSlide].desc}
-          </p>
+              <p className="text-base sm:text-xl text-amber-200/95 font-semibold mb-3 tracking-wide" lang="hi">
+                प्रवेश सत्र 2026-27 — नर्सरी से कक्षा 12 तक
+              </p>
+
+              <p className="text-slate-200 text-sm sm:text-base max-w-2xl mb-8 leading-relaxed font-normal drop-shadow">
+                {HERO_SLIDES[currentSlide].desc}
+              </p>
+            </motion.div>
+          </AnimatePresence>
 
           <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto justify-center">
             <a

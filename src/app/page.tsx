@@ -584,21 +584,21 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900 font-sans antialiased selection:bg-amber-500 selection:text-white">
       
-      {/* ================= HERO SECTION (Enhanced 6 Slides & Natural Brightness) ================= */}
+      {/* ================= HERO SECTION (Fixed: synced crossfade for image + text) ================= */}
       <section 
         onMouseEnter={() => setIsHeroPaused(true)}
         onMouseLeave={() => setIsHeroPaused(false)}
         className="relative pt-40 sm:pt-48 pb-28 sm:pb-36 bg-slate-950 text-white flex flex-col justify-center overflow-hidden"
       >
         
-        {/* Natural balanced background lighting - vibrant and clear */}
-        <AnimatePresence mode="wait">
+        {/* Background image crossfade — no "wait" mode so old and new overlap smoothly */}
+        <AnimatePresence>
           <motion.div
             key={currentHeroSlide}
             initial={{ opacity: 0, scale: 1.02 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.7 }}
+            transition={{ duration: 0.9, ease: "easeInOut" }}
             className="absolute inset-0 z-0"
           >
             <Image
@@ -614,36 +614,49 @@ export default function Home() {
 
         {/* Hero Content Container */}
         <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center">
-          
-          <motion.span
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/20 backdrop-blur-md border border-white/30 text-amber-300 text-xs font-extrabold uppercase tracking-widest mb-6 shadow-sm"
-          >
-            <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
-            {HERO_SLIDES[currentHeroSlide].subtitle}
-          </motion.span>
 
-          <motion.h1
-            key={`title-${currentHeroSlide}`}
-            initial={{ opacity: 0, y: 15 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4 }}
-            className="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight leading-[1.12] mb-4 text-white drop-shadow-md"
-          >
+          {/* Badge — synced with image, sits above the heading */}
+          <AnimatePresence mode="wait">
+            <motion.span
+              key={currentHeroSlide}
+              initial={{ opacity: 0, y: -8 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 8 }}
+              transition={{ duration: 0.5, ease: "easeInOut" }}
+              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/20 backdrop-blur-md border border-white/30 text-amber-300 text-xs font-extrabold uppercase tracking-widest mb-6 shadow-sm"
+            >
+              <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
+              {HERO_SLIDES[currentHeroSlide].subtitle}
+            </motion.span>
+          </AnimatePresence>
+
+          {/* Static heading — stays put, does not reanimate every slide */}
+          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight leading-[1.12] mb-4 text-white drop-shadow-md">
             Tejpal Smarak <br />
             <span className="bg-gradient-to-r from-amber-300 via-amber-400 to-orange-400 bg-clip-text text-transparent">
               Inter College
             </span>
-          </motion.h1>
+          </h1>
 
-          <p className="text-base sm:text-xl text-amber-200/95 font-semibold mb-3 tracking-wide" lang="hi">
-            शिक्षा से सशक्तिकरण — उज्ज्वल भविष्य की ओर
-          </p>
+          {/* Slide-specific text — synced with image crossfade using the same key + timing */}
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={currentHeroSlide}
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -8 }}
+              transition={{ duration: 0.5, ease: "easeInOut" }}
+              className="flex flex-col items-center"
+            >
+              <p className="text-base sm:text-xl text-amber-200/95 font-semibold mb-3 tracking-wide" lang="hi">
+                शिक्षा से सशक्तिकरण — उज्ज्वल भविष्य की ओर
+              </p>
 
-          <p className="text-slate-200 text-sm sm:text-base max-w-2xl mb-8 leading-relaxed font-normal drop-shadow">
-            {HERO_SLIDES[currentHeroSlide].desc}
-          </p>
+              <p className="text-slate-200 text-sm sm:text-base max-w-2xl mb-8 leading-relaxed font-normal drop-shadow">
+                {HERO_SLIDES[currentHeroSlide].desc}
+              </p>
+            </motion.div>
+          </AnimatePresence>
 
           <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
             <button
