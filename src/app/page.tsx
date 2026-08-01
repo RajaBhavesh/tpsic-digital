@@ -314,7 +314,7 @@ const ACADEMIC_STREAMS: StreamTab[] = [
 const TOPPERS_DATA: Topper[] = [
     {
     id: 1,
-    name: "Jhanvi Singh",
+    name: "Janhvi Singh",
     class: "Class 10th (Science)",
     score: "94%",
     year: "2023",
