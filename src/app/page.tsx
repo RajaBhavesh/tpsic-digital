@@ -285,18 +285,7 @@ const ACADEMIC_STREAMS: StreamTab[] = [
     ],
     icon: "📖",
   },
-  {
-    id: "commerce",
-    title: "Commerce Stream",
-    tagline: "Fostering Tomorrow's Business & Finance Leaders",
-    subjects: ["Accountancy", "Business Studies", "Economics", "General Hindi", "English"],
-    features: [
-      "Practical accounting workshops",
-      "Basic financial literacy and spreadsheet tools",
-      "Real-world business exposure",
-    ],
-    icon: "📊",
-  },
+ 
   {
     id: "junior",
     title: "Primary & Junior Wing (Classes 1st - 8th)",
