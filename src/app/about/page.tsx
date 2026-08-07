@@ -80,7 +80,7 @@ const FACILITIES_DATA: FacilityItem[] = [
 
 const MILESTONES: MilestoneItem[] = [
   { year: "2011", title: "Establishment of High School Wing", desc: "Started with a vision to deliver quality education to rural and urban children in Missa Baragaon, Ayodhya." },
-  { year: "2016", title: "Expansion to Intermediate (10+2)", desc: "Upgraded with Science, Arts, and Commerce streams following UP Board guidelines." },
+  { year: "2016", title: "Expansion to Intermediate (10+2)", desc: "Upgraded with Science and Arts streams following UP Board guidelines." },
   { year: "2020", title: "District Rank 1 Achieved", desc: "Our brilliant students secured top district positions in UP Board Intermediate examinations." },
   { year: "2024–2026", title: "Modernization & Digital Integration", desc: "Upgraded smart board technology, laboratory equipment, and advanced safety surveillance systems." },
 ];
