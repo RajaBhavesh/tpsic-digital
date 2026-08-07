@@ -71,7 +71,7 @@ export default function Footer() {
           <div className="col-span-2 md:col-span-1">
             <p className="font-bold text-white text-xs uppercase tracking-wider mb-3">Contact</p>
             <div className="flex flex-col gap-2 mb-4">
-              <p className="text-blue-200 text-xs">📍 Missa Baragaon, Ruduli, Ayodhya UP</p>
+              <p className="text-blue-200 text-xs">📍 Missa Baragaon, Rudauli, Ayodhya UP</p>
               <a href="tel:+919935748696" className="text-blue-200 hover:text-orange-400 text-xs transition-colors">📞 +91 99357 48696</a>
               <a href="tel:+919415529912" className="text-blue-200 hover:text-orange-400 text-xs transition-colors">📞 +91 94155 29912</a>
               <a href="mailto:tejpalsmarakintercollege2011@gmail.com" className="text-blue-200 hover:text-orange-400 text-xs transition-colors break-all">✉️ tejpalsmarakintercollege2011@gmail.com</a>

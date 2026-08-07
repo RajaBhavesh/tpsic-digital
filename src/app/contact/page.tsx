@@ -21,7 +21,7 @@ const CONTACT_CARDS = [
   {
     icon: "📍",
     title: "Address",
-    content: "Missa Baragaon, Ruduli\nAyodhya, UP — 224116",
+    content: "Missa Baragaon, Rudauli\nAyodhya, UP — 224116",
     link: null,
     borderHover: "hover:border-amber-400/80",
     iconBg: "bg-slate-900 text-white group-hover:bg-amber-400 group-hover:text-slate-950",
